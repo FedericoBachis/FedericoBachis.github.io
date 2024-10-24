@@ -1,0 +1,132 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e; /* Colore di sfondo scuro */
+    color: #f0f0f0; /* Colore del testo chiaro */
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #1f1f1f;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: #49c8a0; /* Colore del titolo */
+}
+
+h2 {
+    font-size: 2em;
+    margin: 5px 0; /* Sottolinea il titolo
+    text-decoration: underline;*/
+    color: #49c8a0/*3988d6; /* Colore per il sottotitolo */
+}
+
+
+a {
+    color: #3988d6; /* Colore dei link */
+    text-decoration: none; /* Rimuove la sottolineatura */
+}
+
+header p {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+a:hover {
+    color: #3988d6;
+    text-decoration: underline;
+    font-size: 1.2rem;
+}
+
+#about {
+    padding: 2rem;
+    text-align: center;
+}
+
+#projects {
+    padding: 2rem;
+}
+
+.project {
+    margin-bottom: 2rem;
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+}
+
+#skills {
+    padding: 2rem;
+    text-align: center;
+}
+
+#skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+#skills ul li {
+    display: inline;
+    margin: 0 1rem;
+    font-size: 1.2rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #1f1f1f;
+}
+
+footer nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+footer nav ul li {
+    margin: 0 1rem;
+}
+/*
+footer nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}*/
+
+footer p {
+    margin-top: 1rem;
+}

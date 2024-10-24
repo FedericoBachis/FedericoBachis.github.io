@@ -1,35 +1,57 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #1e1e1e; /* Colore di sfondo scuro simile a IDE */
-    color: #f0f0f0; /* Colore del testo chiaro */
+    background-color: #121212;
+    color: #ffffff;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
-.container {
-    text-align: center;
+header {
+    background-color: #1e1e1e;
     padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.project-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.project {
+    width: 300px;
+    margin: 20px;
+    text-align: center;
+}
+
+.project img {
+    width: 100%;
+    height: auto;
     border-radius: 8px;
-    background-color: #252526; /* Un tono leggermente più chiaro per il contenitore */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
-}
-
-h2 {
-    font-size: 2em;
-    margin: 5px 0;
-    text-decoration: underline; /* Sottolinea il titolo */
-}
-
-p {
-    font-size: 1.2em;
-    margin-top: 10px;
+.project img.error {
+    content: "";
+    width: 300px;
+    height: 200px;
+    background-color: #333;
+    border: 2px dashed #fff;
+    display: block;
+    margin: 0 auto;
 }
