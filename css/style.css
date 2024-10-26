@@ -124,7 +124,7 @@ footer p {
 
 #projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, .2fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, .25fr));
     gap: 20px;
     padding: 2rem;
 }
@@ -139,7 +139,6 @@ footer p {
 }
 
 .project img {
-    padding: 10px;
     max-width: 100%;
     height: auto;
     border-radius: 5px;
