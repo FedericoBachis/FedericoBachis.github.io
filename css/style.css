@@ -35,7 +35,6 @@ h1 {
 h2 {
     font-size: 2em;
     margin: 5px 0;
-
     color: #49c8a0/*3988d6; /* Colore per il sottotitolo */
 }
 
@@ -124,4 +123,28 @@ footer nav ul li {
 
 footer p {
     margin-top: 1rem;
+}
+#projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 2rem;
+}
+
+.project {
+    background-color: #2a2a2a;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+.project img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.projects-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 1rem;
+    color: #49c8a0; /* Stesso colore degli altri titoli */
 }
