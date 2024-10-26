@@ -121,6 +121,10 @@ footer nav ul li {
 footer p {
     margin-top: 1rem;
 }
+#contact{
+      padding: 2rem;
+      text-align: center;
+}
 
 #projects {
     display: grid;
