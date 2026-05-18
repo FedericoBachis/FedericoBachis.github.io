@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { PERSONAL_INFO } from '../constants';
 import { ChevronDown, Sparkles } from 'lucide-react';
-import heroImg from '../hero.png';
+import heroImg from '../imgs/hero.png';
 
 export default function Hero() {
   return (

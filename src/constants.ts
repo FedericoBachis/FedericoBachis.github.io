@@ -14,6 +14,19 @@ import {
   ExternalLink 
 } from 'lucide-react';
 
+// Project Images
+import gnpImg from './imgs/GNP.png';
+import distordiImg from './imgs/Distordi.jpg';
+import msbfImg from './imgs/MSBF.jpg';
+import htImg from './imgs/HT.jpg';
+import idealiaImg from './imgs/Idealia.jpg';
+import atmImg from './imgs/ATM.jpg';
+import sarimImg from './imgs/Sarim.jpg';
+import oohImg from './imgs/OOH.jpg';
+import wsImg from './imgs/WS.jpg';
+import tsImg from './imgs/TS.jpg';
+import rossanaGif from './imgs/Rossana.gif';
+
 export const PERSONAL_INFO = {
   name: "Federico Bachis",
   role: "Unity Game Developer & Research Technologist",
@@ -31,7 +44,7 @@ export const PROJECTS = [
     demoLink: "https://creative-lizards.itch.io/goodnight-potion",
     icon: Gamepad2,
     tags: ["Unity", "2D", "Puzzle"],
-    image: "images/GNP.png",
+    image: gnpImg,
     caseStudy: {
       challenge: "Creating a compelling puzzle mechanic that balances simplicity with deep strategy using limited resources.",
       role: "Lead Developer & Game Designer",
@@ -47,7 +60,7 @@ export const PROJECTS = [
     demoLink: "https://federyuk91.itch.io/distordi",
     icon: Gamepad2,
     tags: ["Unity", "3D", "Multiplayer", "AI"],
-    image: "images/Distordi.jpg",
+    image: distordiImg,
     caseStudy: {
       challenge: "Synchronizing complex puzzle states across multiple players in a 3D environment while integrating generative content.",
       role: "Full Stack Developer (Unity + Photon)",
@@ -63,7 +76,7 @@ export const PROJECTS = [
     demoLink: "https://federyuk91.itch.io/mystupidbigfamily",
     icon: Gamepad2,
     tags: ["Unity", "Ludum Dare", "Simulation"],
-    image: "images/MSBF.jpg",
+    image: msbfImg,
     caseStudy: {
       challenge: "Implementing a complex AI behavior system for family members within a strict 48-hour time limit.",
       role: "Lead Developer",
@@ -79,7 +92,7 @@ export const PROJECTS = [
     demoLink: "https://federyuk91.itch.io/heroess-tree",
     icon: Gamepad2,
     tags: ["Unity", "Strategy", "Defense"],
-    image: "images/HT.jpg",
+    image: htImg,
     caseStudy: {
       challenge: "Balancing the growth mechanic of the tree with the difficulty of enemy waves.",
       role: "Game Designer & Developer",
@@ -94,7 +107,7 @@ export const PROJECTS = [
     link: "https://www.crs4.it/it/projectdetails/IDEALIA/",
     icon: FlaskConical,
     tags: ["Digital Twins", "Unity", "Heritage"],
-    image: "images/Idealia.jpg",
+    image: idealiaImg,
     caseStudy: {
       challenge: "Accurately representing real-world museum environments while maintaining high performance for web and mobile VR browsers.",
       role: "Research Technologist @ CRS4",
@@ -109,7 +122,7 @@ export const PROJECTS = [
     link: "https://www.crs4.it/it/news-view/rossana-il-robot-antropomorfo-sviluppato-dal-crs4/",
     icon: Cpu,
     tags: ["Unity", "ROS", "Arduino", "Robotics"],
-    image: "images/ATM.jpg",
+    image: rossanaGif,
     caseStudy: {
       challenge: "Creating a seamless communication bridge between a high-level game engine (Unity) and low-level robotics middleware (ROS).",
       role: "System Architect & Unity Developer",
@@ -125,7 +138,7 @@ export const PROJECTS = [
     videoUrl: "https://www.youtube.com/embed/lBzVPqVZsJg",
     icon: Box,
     tags: ["VR", "Photogrammetry", "History"],
-    image: "images/Sarim.jpg",
+    image: sarimImg,
     caseStudy: {
       challenge: "Capturing and digitizing large-scale archaeological sites with millimetric precision for an immersive VR setting.",
       role: "VR Developer & Photographer",
@@ -140,7 +153,7 @@ export const PROJECTS = [
     link: "#",
     icon: Dices,
     tags: ["Tabletop", "Strategy", "Space"],
-    image: "images/OOH.jpg",
+    image: oohImg,
     caseStudy: {
       challenge: "Distilling complex space mechanics into an accessible card-based strategy game.",
       role: "Game Designer & Illustrator",
@@ -155,7 +168,7 @@ export const PROJECTS = [
     link: "#",
     icon: FlaskConical,
     tags: ["Unity", "Shaders", "Optimized"],
-    image: "images/WS.jpg",
+    image: wsImg,
     caseStudy: {
       challenge: "Creating realistic water effects using minimal performance overhead on mobile VR.",
       role: "Shader Developer",
@@ -170,7 +183,7 @@ export const PROJECTS = [
     link: "#",
     icon: Cpu,
     tags: ["Unity", "Procedural", "Optimization"],
-    image: "images/TS.jpg",
+    image: tsImg,
     caseStudy: {
       challenge: "Managing thousands of unique tree instances while maintaining high frame rates in VR.",
       role: "Unity Developer",
