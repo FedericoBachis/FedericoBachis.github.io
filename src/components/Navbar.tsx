@@ -21,7 +21,9 @@ export default function Navbar() {
       <div className="glass-card flex items-center gap-4 md:gap-8 px-4 md:px-6 py-3 rounded-full shadow-2xl backdrop-blur-md border border-white/10">
         <a href="#" className="flex items-center gap-2 text-primary font-mono font-bold shrink-0 hover:text-emerald-400 transition-colors">
           <Terminal size={18} className="text-primary" />
-          <span className="hidden lg:inline text-xs tracking-tighter text-white">FB_Dev</span>
+          <span className="hidden lg:inline text-xs tracking-tighter text-primary">
+            FB_Dev:<span className="animate-pulse ml-0.5 inline-block w-1.5 h-3 bg-primary align-middle" />
+          </span>
         </a>
         <div className="flex items-center gap-4 md:gap-6">
           {navItems.map((item) => (

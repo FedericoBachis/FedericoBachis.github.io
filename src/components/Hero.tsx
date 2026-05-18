@@ -1,4 +1,5 @@
-import { motion } from 'motion/react';
+import { useState, useEffect, useRef } from 'react';
+import { motion, useInView } from 'motion/react';
 import { PERSONAL_INFO } from '../constants';
 import { ChevronDown, Sparkles } from 'lucide-react';
 import heroImg from '../imgs/hero.png';
@@ -6,9 +7,33 @@ import { useLanguage } from '../App';
 
 export default function Hero() {
   const { t } = useLanguage();
+  const [typedGreeting, setTypedGreeting] = useState('');
+  const [isTypingComplete, setIsTypingComplete] = useState(false);
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    const text = t.hero.greeting;
+    setTypedGreeting('');
+    setIsTypingComplete(false);
+    
+    let i = 0;
+    const interval = setInterval(() => {
+      setTypedGreeting(text.slice(0, i + 1));
+      i++;
+      if (i >= text.length) {
+        clearInterval(interval);
+        setIsTypingComplete(true);
+      }
+    }, 100);
+
+    return () => clearInterval(interval);
+  }, [t.hero.greeting, isInView]);
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 px-6 overflow-hidden">
+    <section ref={sectionRef} className="relative min-h-screen flex flex-col items-center justify-center pt-20 px-6 overflow-hidden">
       {/* Background blobs */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px] -z-10 animate-pulse" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-emerald-500/20 rounded-full blur-[120px] -z-10 animate-pulse delay-1000" />
@@ -57,7 +82,12 @@ export default function Hero() {
           className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-mono mb-6 border border-primary/20"
         >
           <Sparkles size={14} />
-          <span>{t.hero.greeting}</span>
+          <span className="relative">
+            {typedGreeting}
+            {!isTypingComplete && (
+              <span className="inline-block w-1.5 h-3 bg-primary ml-1 animate-pulse" />
+            )}
+          </span>
         </motion.div>
         
         <h1 className="text-5xl md:text-8xl font-black tracking-tight mb-6 leading-tight uppercase">
