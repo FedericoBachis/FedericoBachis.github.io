@@ -1,20 +1,46 @@
+# Federico Bachis
+## Unity Game Developer & Research Technologist
+
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+  <br />
+  <h1 align="center">FEDERICO <b>BACHIS</b></h1>
+  <p align="center">
+    <b>Unity Game Developer & Research Technologist</b><br />
+    Bridging the gap between gaming and research.
+  </p>
+  <br />
 </div>
 
-# Run and deploy your AI Studio app
+---
 
-This contains everything you need to run your app locally.
+## 🚀 BRIDGING GAMING & RESEARCH
 
-View your app in AI Studio: https://ai.studio/apps/26abcab7-4906-4b8f-ab00-6b0ebbf0e188
+Indie **Game Developer** and **Unity Developer** since 2017.
 
-## Run Locally
+I specialize in **3D environment development**, human-robot interaction, and **gamification** for research applications. Currently, I work as a **Research Technologist** in Game-Based Interaction Systems at **CRS4**, bridging the gap between advanced research and **immersive user experiences**.
 
-**Prerequisites:**  Node.js
+I hold a degree in **Computer Science** from the University of Cagliari, with expertise in **scientific writing** and **technical software architecture**.
 
+---
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### 🛠️ Tech Stack & Skills
+
+- **Engine:** Unity (URP/HDRP), Unreal Engine
+- **Languages:** C#, C++, JavaScript, Python
+- **Specialized:** XR (VR/AR), Robotics (ROS/Arduino), Photogrammetry, Digital Twins
+- **Tools:** Blender, 3DF Zephyr, Photon, Git
+
+---
+
+### 🌐 Contact & Links
+
+- **Portfolio:** [federicobachis.dev](https://federicobachis.dev/)
+- **LinkedIn:** [Federico Bachis](https://www.linkedin.com/in/fbachis/)
+- **Research Profile:** [CRS4 - Federico Bachis](https://www.crs4.it/people/federico-bachis/)
+- **Itch.io:** [Federyuk91](https://federyuk91.itch.io/)
+
+---
+
+<div align="center">
+  <p><i>All Right Reversed | 🄯 Federico Bachis 2026</i></p>
+</div>
