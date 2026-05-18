@@ -31,7 +31,7 @@ export const PROJECTS = [
     demoLink: "https://creative-lizards.itch.io/goodnight-potion",
     icon: Gamepad2,
     tags: ["Unity", "2D", "Puzzle"],
-    image: "https://images.unsplash.com/photo-1516051615617-3a42d8804661?q=80&w=800&auto=format&fit=crop",
+    image: "./images/GNP.png?q=80&w=800&auto=format&fit=crop",
     caseStudy: {
       challenge: "Creating a compelling puzzle mechanic that balances simplicity with deep strategy using limited resources.",
       role: "Lead Developer & Game Designer",
@@ -47,7 +47,7 @@ export const PROJECTS = [
     demoLink: "https://federyuk91.itch.io/distordi",
     icon: Gamepad2,
     tags: ["Unity", "3D", "Multiplayer", "AI"],
-    image: "https://images.unsplash.com/photo-1620712943543-bcc463867000?q=80&w=800&auto=format&fit=crop",
+    image: "./images/Distordi.jpg?q=80&w=800&auto=format&fit=crop",
     caseStudy: {
       challenge: "Synchronizing complex puzzle states across multiple players in a 3D environment while integrating generative content.",
       role: "Full Stack Developer (Unity + Photon)",
@@ -77,7 +77,7 @@ export const PROJECTS = [
     link: "https://www.crs4.it/it/news-view/rossana-il-robot-antropomorfo-sviluppato-dal-crs4/",
     icon: Cpu,
     tags: ["Unity", "ROS", "Arduino", "Robotics"],
-    image: "https://images.unsplash.com/photo-1589254065878-42c9da997008?q=80&w=800&auto=format&fit=crop",
+    image: "./images/Rossana.gif?q=80&w=800&auto=format&fit=crop",
     caseStudy: {
       challenge: "Creating a seamless communication bridge between a high-level game engine (Unity) and low-level robotics middleware (ROS).",
       role: "System Architect & Unity Developer",
@@ -93,7 +93,7 @@ export const PROJECTS = [
     videoUrl: "https://www.youtube.com/embed/lBzVPqVZsJg",
     icon: Box,
     tags: ["VR", "Photogrammetry", "History"],
-    image: "https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?q=80&w=800&auto=format&fit=crop",
+    image: "./images/Sarim.jpg?q=80&w=800&auto=format&fit=crop",
     caseStudy: {
       challenge: "Capturing and digitizing large-scale archaeological sites with millimetric precision for an immersive VR setting.",
       role: "VR Developer & Photographer",
@@ -108,7 +108,7 @@ export const PROJECTS = [
     link: "#",
     icon: Dices,
     tags: ["Tabletop", "Strategy", "Space"],
-    image: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=800&auto=format&fit=crop",
+    image: "./images/OOH.jpg?q=80&w=800&auto=format&fit=crop",
     caseStudy: {
       challenge: "Distilling complex space mechanics into an accessible card-based strategy game.",
       role: "Game Designer & Illustrator",
