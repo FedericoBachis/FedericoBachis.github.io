@@ -47,7 +47,7 @@ export const PROJECTS = [
     demoLink: "https://federyuk91.itch.io/distordi",
     icon: Gamepad2,
     tags: ["Unity", "3D", "Multiplayer", "AI"],
-    image: "./images/Distordi.jpg",
+    image: "https://raw.githubusercontent.com/FedericoBachis/FedericoBachis.github.io/refs/heads/main/images/Distordi.jpg",
     caseStudy: {
       challenge: "Synchronizing complex puzzle states across multiple players in a 3D environment while integrating generative content.",
       role: "Full Stack Developer (Unity + Photon)",
