@@ -2,8 +2,11 @@ import { motion } from 'motion/react';
 import { PERSONAL_INFO } from '../constants';
 import { ChevronDown, Sparkles } from 'lucide-react';
 import heroImg from '../imgs/hero.png';
+import { useLanguage } from '../App';
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 px-6 overflow-hidden">
       {/* Background blobs */}
@@ -29,7 +32,7 @@ export default function Hero() {
                <div className="absolute inset-0 bg-zinc-950 z-0" />
                <img 
                 src={heroImg} 
-                alt="Federico Bachis - VR Specialist"
+                alt="Federico Bachis"
                 className="w-full h-full object-cover relative z-10 opacity-90 brightness-110 contrast-110"
                 style={{ 
                   filter: 'drop-shadow(0 0 20px rgba(20,184,166,0.3))',
@@ -54,7 +57,7 @@ export default function Hero() {
           className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-mono mb-6 border border-primary/20"
         >
           <Sparkles size={14} />
-          <span>PORTFOLIO 2026</span>
+          <span>{t.hero.greeting}</span>
         </motion.div>
         
         <h1 className="text-5xl md:text-8xl font-black tracking-tight mb-6 leading-tight uppercase">
@@ -66,7 +69,7 @@ export default function Hero() {
         </h1>
         
         <p className="text-lg md:text-2xl text-zinc-400 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
-          {PERSONAL_INFO.role}
+          {t.hero.description}
         </p>
 
         <div className="flex flex-wrap justify-center gap-4">
@@ -74,13 +77,13 @@ export default function Hero() {
             href="#projects"
             className="px-8 py-4 bg-primary text-zinc-950 font-bold rounded-lg hover:bg-emerald-400 transition-all duration-300 shadow-xl shadow-primary/10"
           >
-            Explore Projects
+            {t.nav.projects}
           </a>
           <a 
             href="#contact"
-            className="px-8 py-4 bg-zinc-900 text-zinc-100 font-bold rounded-lg border border-zinc-800 hover:border-zinc-600 transition-all duration-300"
+            className="px-8 py-4 bg-zinc-900 border border-zinc-800 text-zinc-100 font-bold rounded-lg hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 shadow-xl"
           >
-            Get in Touch
+            {t.nav.contact}
           </a>
         </div>
       </motion.div>

@@ -26,6 +26,7 @@ import oohImg from './imgs/OOH.jpg';
 import wsImg from './imgs/WS.jpg';
 import tsImg from './imgs/TS.jpg';
 import rossanaGif from './imgs/Rossana.gif';
+import pinguiniImg from './imgs/pinguini.png';
 
 export const PERSONAL_INFO = {
   name: "Federico Bachis",
@@ -116,10 +117,10 @@ export const PROJECTS = [
     }
   },
   {
-    title: "ATM / Rossana",
-    description: "Anthropomorphic robotic assistant (ATM) developed to guide visitors in library settings. Integrated with Unity, Arduino, and ROS.",
+    title: "Rossana / Patented Robotic Assistant",
+    description: "Anthropomorphic robotic assistant developed to guide visitors in library settings. Patented system for interactive robotic assistance (WO2023053048A1).",
     type: "Research",
-    link: "https://www.crs4.it/it/news-view/rossana-il-robot-antropomorfo-sviluppato-dal-crs4/",
+    link: "https://patentimages.storage.googleapis.com/f2/e7/e3/bcf1a713448e07/WO2023053048A1.pdf",
     icon: Cpu,
     tags: ["Unity", "ROS", "Arduino", "Robotics"],
     image: rossanaGif,
@@ -162,33 +163,48 @@ export const PROJECTS = [
     }
   },
   {
-    title: "Water System for Unity",
-    description: "A custom water shader and buoyancy system developed for low-poly environments in Unity.",
-    type: "Research",
-    link: "#",
-    icon: FlaskConical,
-    tags: ["Unity", "Shaders", "Optimized"],
-    image: wsImg,
+    title: "Pinguini alla Deriva",
+    description: "A fun and strategic web-based board game where players manage penguins on drifting ice floes. Developed by Federyuk91.",
+    type: "Boardgame",
+    link: "https://pinguini-alla-deriva-446895826488.europe-west2.run.app/",
+    icon: Dices,
+    tags: ["Web", "Strategy", "Multiplayer"],
+    image: pinguiniImg,
     caseStudy: {
-      challenge: "Creating realistic water effects using minimal performance overhead on mobile VR.",
-      role: "Shader Developer",
-      solution: "Wrote custom HLSL shaders focusing on vertex displacement and depth-based color blending.",
-      result: "Used internally at CRS4 for various nautical simulation projects."
+      challenge: "Creating a balanced turn-based strategy game that works seamlessly in the browser with real-time updates.",
+      role: "Lead Developer",
+      solution: "Developed a custom state management system to handle turns and ice movement logic efficiently.",
+      result: "A polished web experience with engaging gameplay mechanics."
     }
   },
   {
-    title: "Tree System / Terrain Gen",
-    description: "Algorithmic placement and growth system for large-scale forest environments in Unity.",
+    title: "Wurm Slayer",
+    description: "A fast-paced survival game where the character is eaten by a worm. Players must avoid or destroy obstacles inside the stomach to survive levels that last about 60 seconds.",
+    type: "Videogame",
+    link: "#",
+    icon: FlaskConical,
+    tags: ["Unity", "Action", "Survival"],
+    image: wsImg,
+    caseStudy: {
+      challenge: "Creating a high-pressure environment with procedural obstacle generation that fits a mobile-friendly 1-minute loop.",
+      role: "Game Developer",
+      solution: "Implemented a custom buoyancy and gravity system to simulate being inside a stomach, with object pooling for obstacles.",
+      result: "A challenging prototype used to test juice and feedback mechanics in Unity."
+    }
+  },
+  {
+    title: "Traffic System / City Gen",
+    description: "A simulation of traffic and traffic light management in a city center. Algorithmic placement and growth system for complex urban environments.",
     type: "Research",
     link: "#",
     icon: Cpu,
-    tags: ["Unity", "Procedural", "Optimization"],
+    tags: ["Unity", "Simulation", "AI", "Urban"],
     image: tsImg,
     caseStudy: {
-      challenge: "Managing thousands of unique tree instances while maintaining high frame rates in VR.",
-      role: "Unity Developer",
-      solution: "Implemented GPU instancing and distance-based growth logic for efficient large-scale environment management.",
-      result: "Significantly reduced draw calls in research environment prototypes."
+      challenge: "Managing thousands of unique vehicle instances and complex traffic light logic while maintaining high performance.",
+      role: "System Architect & Lead Developer",
+      solution: "Implemented discrete event simulation for traffic lights and GPU instancing for vehicle rendering.",
+      result: "Successfully used as a base for urban planning visualization projects."
     }
   }
 ];

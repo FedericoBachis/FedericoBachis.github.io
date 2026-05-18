@@ -1,16 +1,20 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { PROJECTS } from '../constants';
 import { ExternalLink, X, PlayCircle, Info, ArrowRight } from 'lucide-react';
+import { useLanguage } from '../App';
 
 export default function Projects() {
+  const { t } = useLanguage();
   const [filter, setFilter] = useState('All');
-  const [selectedProject, setSelectedProject] = useState<typeof PROJECTS[0] | null>(null);
-  const categories = ['All', 'Videogame', 'Research', 'Boardgame'];
+  const [selectedProject, setSelectedProject] = useState<any | null>(null);
+  
+  // Get all unique types from project data
+  const types = Array.from(new Set(t.projects.data.map(p => p.type)));
+  const categories = ['All', ...types];
 
   const filteredProjects = filter === 'All' 
-    ? PROJECTS 
-    : PROJECTS.filter(p => p.type === filter);
+    ? t.projects.data 
+    : t.projects.data.filter(p => p.type === filter);
 
   // Prevent scroll when modal is open
   useEffect(() => {
@@ -26,21 +30,21 @@ export default function Projects() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-8">
           <div className="text-center md:text-left">
-            <span className="text-primary font-mono text-sm mb-4 block uppercase tracking-widest">Interactive Showcase</span>
-            <h2 className="text-4xl md:text-5xl font-black italic tracking-tight uppercase">SELECTED <span className="text-zinc-500">WORKS</span></h2>
+            <span className="text-white font-mono text-xs mb-4 block uppercase tracking-widest opacity-50 italic">Interactive Showcase</span>
+            <h2 className="text-4xl md:text-5xl font-black italic tracking-tight uppercase">{t.projects.title} <span className="text-zinc-500">WORKS</span></h2>
           </div>
-          <div className="flex bg-zinc-950 p-1.5 rounded-2xl border border-zinc-800 shadow-2xl backdrop-blur-sm self-center">
+          <div className="flex flex-wrap justify-center bg-zinc-950 p-1.5 rounded-2xl border border-zinc-800 shadow-2xl backdrop-blur-sm self-center">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
                 className={`px-4 py-2 rounded-lg text-xs font-mono transition-all duration-300 ${
                   filter === cat 
-                    ? 'bg-primary text-zinc-950' 
+                    ? 'bg-primary text-zinc-950 px-6 font-bold' 
                     : 'text-zinc-500 hover:text-zinc-300'
                 }`}
               >
-                {cat}
+                {cat === 'All' ? (t.language === 'it' ? 'Tutti' : 'All') : cat}
               </button>
             ))}
           </div>
@@ -95,11 +99,11 @@ export default function Projects() {
                   </p>
 
                   <div className="flex items-center justify-between pt-4 border-t border-zinc-800 mt-auto">
-                    <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest flex items-center gap-2">
-                      <Info size={12} className="text-primary" />
+                    <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest flex items-center gap-2 group-hover:text-white transition-colors">
+                      <Info size={12} className="text-zinc-300" />
                       View Details
                     </span>
-                    <ArrowRight size={16} className="text-zinc-600 group-hover:text-primary transition-colors group-hover:translate-x-1" />
+                    <ArrowRight size={16} className="text-zinc-600 group-hover:text-white transition-colors group-hover:translate-x-1" />
                   </div>
                 </div>
               </motion.div>
@@ -123,17 +127,17 @@ export default function Projects() {
               initial={{ scale: 0.9, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
-              className="fixed inset-4 md:inset-10 lg:inset-20 z-[70] glass-card rounded-[2rem] overflow-hidden flex flex-col md:flex-row"
+              className="fixed inset-4 md:inset-10 lg:inset-20 z-[70] glass-card rounded-[2rem] overflow-hidden flex flex-col md:flex-row shadow-[0_0_100px_rgba(20,184,166,0.1)] border border-white/10"
             >
               <button 
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-6 right-6 p-3 bg-zinc-900 border border-zinc-800 rounded-full text-zinc-400 hover:text-white hover:border-primary transition-all z-10"
+                className="absolute top-6 right-6 p-3 bg-zinc-900 border border-zinc-800 rounded-full text-zinc-400 hover:text-primary hover:border-primary transition-all z-20"
               >
                 <X size={20} />
               </button>
 
               {/* Visual Element Panel */}
-              <div className="w-full md:w-3/5 bg-zinc-950 relative overflow-hidden flex items-center justify-center border-b md:border-b-0 md:border-r border-zinc-800">
+              <div className="w-full md:w-3/5 bg-zinc-950 relative overflow-hidden flex items-center justify-center border-b md:border-b-0 md:border-r border-zinc-800 h-64 md:h-full">
                 {selectedProject.videoUrl ? (
                   <iframe 
                     src={selectedProject.videoUrl}
@@ -154,14 +158,14 @@ export default function Projects() {
               </div>
 
               {/* Info Panel */}
-              <div className="w-full md:w-2/5 p-8 md:p-12 overflow-y-auto flex flex-col">
+              <div className="w-full md:w-2/5 p-8 md:p-12 overflow-y-auto flex flex-col bg-zinc-950/50">
                 <div className="mb-8">
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full text-[10px] font-mono tracking-widest uppercase">
-                      Case Study
+                    <span className="px-3 py-1 bg-white/10 text-white border border-white/20 rounded-full text-[10px] font-mono tracking-widest uppercase">
+                      {t.projects.subtitle}
                     </span>
                     <span className="text-zinc-600 font-mono text-[10px] uppercase">
-                      Project {filteredProjects.indexOf(selectedProject) + 1}
+                      ID: {String(t.projects.data.indexOf(selectedProject) + 1).padStart(3, '0')}
                     </span>
                   </div>
                   <h2 className="text-3xl md:text-4xl font-black mb-4 uppercase">{selectedProject.title}</h2>
@@ -172,26 +176,28 @@ export default function Projects() {
 
                 <div className="space-y-8 mb-12">
                    <div>
-                     <h4 className="text-xs font-mono text-primary uppercase tracking-widest mb-3">The Challenge</h4>
-                     <p className="text-sm text-zinc-300 font-light leading-relaxed italic border-l-2 border-primary/30 pl-4">
+                     <h4 className="text-xs font-mono text-white italic uppercase tracking-widest mb-3 opacity-50">{t.projects.challenge}</h4>
+                     <p className="text-sm text-zinc-200 font-light leading-relaxed border-l-2 border-white/20 pl-4 bg-white/5 py-3 rounded-r-lg shadow-inner">
                        "{selectedProject.caseStudy?.challenge}"
                      </p>
                    </div>
-                   <div>
-                     <h4 className="text-xs font-mono text-zinc-100 uppercase tracking-widest mb-2">My Role</h4>
-                     <p className="text-sm text-zinc-400">{selectedProject.caseStudy?.role}</p>
-                   </div>
-                   <div>
-                     <h4 className="text-xs font-mono text-zinc-100 uppercase tracking-widest mb-2">The Solution</h4>
-                     <p className="text-sm text-zinc-400 leading-relaxed">
-                       {selectedProject.caseStudy?.solution}
-                     </p>
-                   </div>
-                   <div>
-                     <h4 className="text-xs font-mono text-zinc-100 uppercase tracking-widest mb-2">Result</h4>
-                     <p className="text-sm text-zinc-400">
-                       {selectedProject.caseStudy?.result}
-                     </p>
+                   <div className="grid grid-cols-1 gap-6">
+                     <div>
+                       <h4 className="text-xs font-mono text-zinc-100 uppercase tracking-widest mb-2 opacity-50">{t.projects.role}</h4>
+                       <p className="text-sm text-zinc-400">{selectedProject.caseStudy?.role}</p>
+                     </div>
+                     <div>
+                       <h4 className="text-xs font-mono text-zinc-100 uppercase tracking-widest mb-2 opacity-50">{t.projects.solution}</h4>
+                       <p className="text-sm text-zinc-400 leading-relaxed font-light">
+                         {selectedProject.caseStudy?.solution}
+                       </p>
+                     </div>
+                     <div>
+                       <h4 className="text-xs font-mono text-zinc-100 uppercase tracking-widest mb-2 opacity-50">{t.projects.result}</h4>
+                       <p className="text-sm text-zinc-400 font-light italic">
+                         {selectedProject.caseStudy?.result}
+                       </p>
+                     </div>
                    </div>
                 </div>
 
@@ -208,20 +214,20 @@ export default function Projects() {
                         href={selectedProject.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 px-6 py-3 bg-zinc-100 text-zinc-950 rounded-xl font-bold text-sm hover:bg-white transition-all shadow-lg"
+                        className="flex items-center justify-center gap-2 px-6 py-4 bg-zinc-100 text-zinc-950 rounded-xl font-bold text-xs uppercase tracking-tighter hover:bg-white transition-all shadow-lg"
                       >
-                        Project Link
-                        <ExternalLink size={16} />
+                         {t.projects.visit_site}
+                        <ExternalLink size={14} />
                       </a>
                       {selectedProject.demoLink && (
                          <a 
                           href={selectedProject.demoLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-2 px-6 py-3 bg-primary text-zinc-950 rounded-xl font-bold text-sm hover:bg-emerald-400 transition-all shadow-lg"
+                          className="flex items-center justify-center gap-2 px-6 py-4 bg-primary text-zinc-950 rounded-xl font-bold text-xs uppercase tracking-tighter hover:bg-emerald-400 transition-all shadow-lg"
                         >
-                          Play Demo
-                          <PlayCircle size={16} />
+                          {t.projects.view_demo}
+                          <PlayCircle size={14} />
                         </a>
                       )}
                    </div>

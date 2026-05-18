@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { SKILLS } from '../constants';
-import { Cpu, Zap, Activity, ShieldCheck, Database, Layers, Binary, Satellite, MousePointer2, Box, Hash, Shapes, Gamepad2, Terminal, Code2, Globe, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Cpu, Zap, Activity, ShieldCheck, Database, Layers, Binary, Satellite, Box, Hash, Shapes, Gamepad2, Terminal, Code2, Globe, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useLanguage } from '../App';
 
 const categoryIcons: Record<string, any> = {
   Engine: Box,
@@ -32,7 +32,8 @@ const BRAND_STYLES: Record<string, { color: string, bg: string, icon?: any }> = 
 };
 
 export default function Skills() {
-  const [hoveredSkill, setHoveredSkill] = useState<typeof SKILLS[0] | null>(null);
+  const { t } = useLanguage();
+  const [hoveredSkill, setHoveredSkill] = useState<any | null>(null);
   const [activeSkillName, setActiveSkillName] = useState<string | null>(null);
   const [seekerPos, setSeekerPos] = useState({ x: 0, y: 0 });
   const [isSectionVisible, setIsSectionVisible] = useState(false);
@@ -104,7 +105,7 @@ export default function Skills() {
     }
   }, [activeSkillName, isMobile, isSectionVisible]); // Added isSectionVisible to sync when it enters viewport
 
-  const getSkill = (name: string) => SKILLS.find(s => s.name === name);
+  const getSkill = (name: string) => t.skills_data.find(s => s.name === name) || t.skills_data[0];
 
   const handleManualNav = (dir: 1 | -1) => {
     setDirection(dir);
@@ -117,7 +118,7 @@ export default function Skills() {
     });
   };
 
-  const currentDisplaySkill = SKILLS.find(s => s.name === activeSkillName);
+  const currentDisplaySkill = t.skills_data.find(s => s.name === activeSkillName);
 
   const slideVariants = {
     initial: (direction: number) => ({
@@ -188,15 +189,15 @@ export default function Skills() {
         <div className="text-center mb-12 md:mb-32 relative">
            <div className="inline-flex items-center gap-2 px-3 py-1 bg-zinc-900 text-zinc-100 border border-zinc-800 rounded-lg text-[10px] font-mono tracking-[0.2em] uppercase mb-6">
              <Activity size={12} className="animate-pulse" />
-             <span>Neural Network Sync: 100%</span>
+             <span>{t.skills.sync}</span>
            </div>
            
            <div className="relative">
              <h2 className="text-6xl md:text-9xl font-black uppercase tracking-tighter italic text-zinc-900/30 absolute left-1/2 -top-12 md:-top-16 -translate-x-1/2 whitespace-nowrap pointer-events-none select-none z-0">
-               TECH_TREE
+               {t.skills.tech_tree}
              </h2>
              <h2 className="text-5xl md:text-6xl font-black uppercase tracking-tight relative z-10">
-               SKILL <span className="text-white italic">PROGRESSION</span>
+               SKILL <span className="text-white italic">{t.skills.title.split(' ')[1]}</span>
              </h2>
            </div>
         </div>
@@ -280,17 +281,18 @@ export default function Skills() {
             </div>
           </div>
         ) : (
-          /* DESKTOP TECH TREE VIEW */
-          <div className="flex flex-col gap-40">
+          /* DESKTOP TECH TREE VIEW - CENTERED ALIGNMENT */
+          <div className="flex flex-col gap-40 items-center">
             
             {/* UNITY BRANCH */}
-            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-0">
-              <div className="flex-shrink-0 z-30 lg:mr-16">
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 w-full justify-center">
+              <div className="flex-shrink-0 z-30">
                 <SkillNode skill={getSkill('Unity')} onHover={setHoveredSkill} size="large" isAutoActive={activeSkillName === 'Unity'} />
               </div>
 
-              <div className="flex flex-col gap-16 flex-1 w-full relative">
-                 <div className="hidden lg:block absolute -left-16 top-1/2 -translate-y-1/2 w-16 h-32 border-l border-y border-zinc-800 rounded-l-3xl -z-10" />
+              <div className="flex flex-col gap-16 relative">
+                 {/* Connection lines handled by absolute positioning or SVG - adding back a subtle visual connector */}
+                 <div className="hidden lg:block absolute -left-12 top-1/2 -translate-y-1/2 w-12 h-32 border-l border-y border-zinc-800 rounded-l-3xl -z-10" />
 
                  <div className="flex flex-wrap items-center gap-6 lg:gap-12 justify-center lg:justify-start">
                     {['XR', 'Meta Quest', 'Oculus', 'Steam VR', 'Vuforia'].map((name, i) => (
@@ -319,16 +321,16 @@ export default function Skills() {
             </div>
 
             {/* CODING BRANCH */}
-            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-0 relative">
-              <div className="absolute -left-12 top-1/2 -translate-y-1/2 hidden xl:block">
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 relative w-full justify-center">
+              <div className="absolute -left-12 lg:left-0 xl:-left-12 top-1/2 -translate-y-1/2 hidden xl:block">
                  <span className="[writing-mode:vertical-lr] rotate-180 font-mono text-[9px] text-zinc-700 tracking-[0.4em] uppercase">Computational_Logic</span>
               </div>
-              <div className="flex-shrink-0 z-30 lg:mr-16">
+              <div className="flex-shrink-0 z-30">
                 <SkillNode skill={getSkill('Coding')} onHover={setHoveredSkill} size="large" isAutoActive={activeSkillName === 'Coding'} />
               </div>
 
-              <div className="flex flex-col gap-16 flex-1 w-full relative">
-                 <div className="hidden lg:block absolute -left-16 top-1/2 -translate-y-1/2 w-16 h-32 border-l border-y border-zinc-800 rounded-l-3xl -z-10" />
+              <div className="flex flex-col gap-16 relative">
+                 <div className="hidden lg:block absolute -left-12 top-1/2 -translate-y-1/2 w-12 h-32 border-l border-y border-zinc-800 rounded-l-3xl -z-10" />
 
                  <div className="flex flex-wrap items-center gap-6 lg:gap-12 justify-center lg:justify-start">
                     {['C#', 'Javascript', 'Python', 'C++'].map((name, i) => (
@@ -358,32 +360,8 @@ export default function Skills() {
           </div>
         )}
 
-         {/* Legend */}
-        <div className="mt-32 pt-12 border-t border-zinc-900 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
-           <div className="flex gap-12">
-             <div className="flex flex-col gap-1">
-               <span className="text-[10px] font-mono text-white uppercase tracking-[0.2em]">Tier 03</span>
-               <span className="text-[9px] text-zinc-500 uppercase tracking-widest font-mono">Core Mastery</span>
-             </div>
-             <div className="flex flex-col gap-1">
-               <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-[0.2em]">Tier 02</span>
-               <span className="text-[9px] text-zinc-500 uppercase tracking-widest font-mono">Expert Proficiency</span>
-             </div>
-             <div className="flex flex-col gap-1">
-               <span className="text-[10px] font-mono text-zinc-600 uppercase tracking-[0.2em]">Tier 01</span>
-               <span className="text-[9px] text-zinc-500 uppercase tracking-widest font-mono">Technical Agility</span>
-             </div>
-           </div>
-
-           <div className="flex items-center gap-8 opacity-40">
-              <div className="flex items-center gap-2">
-                 <MousePointer2 size={12} className="text-white" />
-                 <span className="text-[9px] font-mono uppercase tracking-widest">Select Nodes for Bio</span>
-              </div>
-              <div className="w-px h-4 bg-zinc-800" />
-              <p className="text-[9px] font-mono uppercase tracking-widest italic">Neural Interface Verified</p>
-           </div>
-        </div>
+         {/* Separation Area */}
+        <div className="mt-16 border-t border-zinc-900/50" />
       </div>
 
       {/* SCI-FI POPUP OVERLAY (DESKTOP ONLY & VISIBILITY CHECK) */}
@@ -418,12 +396,12 @@ export default function Skills() {
 
                <div className="space-y-4">
                   <div className="flex justify-between items-end border-b border-zinc-800 pb-2">
-                    <span className="text-[9px] font-mono text-zinc-500 uppercase">Proficiency</span>
-                    <span className="text-xs font-mono text-white">OPTIMIZED</span>
+                    <span className="text-[9px] font-mono text-zinc-500 uppercase">{t.skills.proficiency}</span>
+                    <span className="text-xs font-mono text-white tracking-[0.2em]">{t.skills.optimized}</span>
                   </div>
                   {currentDisplaySkill.connections && (
                     <div>
-                      <span className="text-[9px] font-mono text-zinc-500 uppercase mb-2 block">Linked Modules</span>
+                      <span className="text-[9px] font-mono text-zinc-500 uppercase mb-2 block">{t.skills.connections}</span>
                       <div className="flex flex-wrap gap-2">
                         {currentDisplaySkill.connections.map(c => (
                           <span key={c} className="px-2 py-0.5 bg-zinc-950 border border-zinc-800 rounded text-[8px] font-mono text-zinc-400">
@@ -496,13 +474,13 @@ function SkillNode({ skill, onHover, size, isAutoActive }: SkillNodeProps) {
       <motion.div 
         animate={{ 
           rotate: activeState ? 90 : 45,
-          borderColor: activeState ? 'rgba(255, 255, 255, 0.4)' : 'rgba(82, 82, 91, 0.3)'
+          borderColor: activeState ? 'rgba(20, 184, 166, 0.4)' : 'rgba(82, 82, 91, 0.3)'
         }}
         className={`absolute inset-0 shadow-inner border transition-colors duration-500
-          ${size === 'large' ? 'shadow-[0_0_20px_rgba(255,255,255,0.01)]' : ''}
-          ${activeState ? 'shadow-[0_0_20px_rgba(255,255,255,0.1)]' : ''}`}
+          ${size === 'large' ? 'shadow-[0_0_20px_rgba(20,184,166,0.01)]' : ''}
+          ${activeState ? 'shadow-[0_0_20px_rgba(20,184,166,0.1)]' : ''}`}
         style={{ 
-          backgroundColor: activeState ? 'rgba(255, 255, 255, 0.05)' : 'rgba(24, 24, 27, 0.4)',
+          backgroundColor: activeState ? 'rgba(20, 184, 166, 0.1)' : 'rgba(24, 24, 27, 0.4)',
         }}
       />
 
@@ -512,7 +490,7 @@ function SkillNode({ skill, onHover, size, isAutoActive }: SkillNodeProps) {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1.2 }}
             exit={{ opacity: 0, scale: 0.8 }}
-            className="absolute inset-0 bg-white/10 blur-xl rounded-full -z-10"
+            className="absolute inset-0 bg-primary/10 blur-xl rounded-full -z-10"
           />
         )}
       </AnimatePresence>
@@ -522,8 +500,8 @@ function SkillNode({ skill, onHover, size, isAutoActive }: SkillNodeProps) {
           animate={{ scale: activeState ? 1.2 : 1 }}
           className={`p-2 rounded-xl transition-all duration-500`}
           style={{ 
-            color: activeState ? '#ffffff' : '#71717a',
-            filter: activeState ? 'drop-shadow(0 0 12px rgba(255,255,255,0.3))' : 'none'
+            color: activeState ? '#14b8a6' : '#71717a',
+            filter: activeState ? 'drop-shadow(0 0 12px rgba(20,184,166,0.3))' : 'none'
           }}
         >
           <Icon size={iconSizes[size]} />
@@ -531,9 +509,9 @@ function SkillNode({ skill, onHover, size, isAutoActive }: SkillNodeProps) {
         <span 
           className={`font-mono uppercase tracking-[0.1em] font-bold leading-tight transition-all duration-300 max-w-[80px]
             ${size === 'large' ? 'text-xs text-zinc-100' : 'text-[9px] text-zinc-500'} 
-            ${activeState ? 'text-white' : ''}`}
+            ${activeState ? 'text-primary' : ''}`}
           style={{
-            textShadow: activeState ? '0 0 12px rgba(255,255,255,0.3)' : 'none'
+            textShadow: activeState ? '0 0 12px rgba(20,184,166,0.3)' : 'none'
           }}
         >
           {skill.name}
@@ -543,9 +521,9 @@ function SkillNode({ skill, onHover, size, isAutoActive }: SkillNodeProps) {
       {size === 'large' && (
         <>
           <div className={`absolute -top-2 -left-2 w-4 h-4 border-t-2 border-l-2 transition-colors duration-300
-            ${activeState ? 'border-white' : 'border-zinc-800'}`} />
+            ${activeState ? 'border-primary' : 'border-zinc-800'}`} />
           <div className={`absolute -bottom-2 -right-2 w-4 h-4 border-b-2 border-r-2 transition-colors duration-300
-            ${activeState ? 'border-white' : 'border-zinc-800'}`} />
+            ${activeState ? 'border-primary' : 'border-zinc-800'}`} />
         </>
       )}
     </motion.div>
