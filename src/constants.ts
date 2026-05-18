@@ -66,7 +66,7 @@ export const PROJECTS = [
     caseStudy: {
       challenge: "Accurately representing real-world museum environments while maintaining high performance for web and mobile VR browsers.",
       role: "Research Technologist @ CRS4",
-      solution: "Created custom shaders and LOD (Level of Detail) systems in Unity to handle high-fidelity photogrammetry models efficiently.",
+      solution: "Created custom systems to generate museums in Unity to handle models efficiently in webGL.",
       result: "Used by research institutions to provide virtual tours during lockdown periods."
     }
   },
@@ -81,7 +81,7 @@ export const PROJECTS = [
     caseStudy: {
       challenge: "Creating a seamless communication bridge between a high-level game engine (Unity) and low-level robotics middleware (ROS).",
       role: "System Architect & Unity Developer",
-      solution: "Developed a custom ROS-Unity bridge using WebSockets to send real-time sensor data and control motor commands via Arduino.",
+      solution: "Patent developed for autonomous robot movement",
       result: "Successfully deployed in a library pilot program with over 500 successful visitor interactions."
     }
   },
