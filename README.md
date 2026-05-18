@@ -34,7 +34,7 @@ I hold a degree in **Computer Science** from the University of Cagliari, with ex
 
 ### 🌐 Contact & Links
 
-- **Portfolio:** [federicobachis.dev](https://federicobachis.dev/)
+- **Portfolio:** [federicobachis.dev](https://federicobachis.github.io/)
 - **LinkedIn:** [Federico Bachis](https://www.linkedin.com/in/fbachis/)
 - **Research Profile:** [CRS4 - Federico Bachis](https://www.crs4.it/people/federico-bachis/)
 - **Itch.io:** [Federyuk91](https://federyuk91.itch.io/)
