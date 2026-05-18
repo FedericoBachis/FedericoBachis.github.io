@@ -214,19 +214,19 @@ export default function Skills() {
                     initial="initial"
                     animate="animate"
                     exit="exit"
-                    className="absolute inset-0 glass-card rounded-3xl p-8 border-b-4 border-b-primary flex flex-col items-center"
+                    className="absolute inset-0 glass-card rounded-3xl p-8 border-b-4 border-b-white/20 flex flex-col items-center"
                   >
                     <div className="absolute top-0 left-0 w-full h-1 bg-zinc-900 overflow-hidden">
                       <motion.div 
                         initial={{ scaleX: 0 }}
                         animate={{ scaleX: 1 }}
                         transition={{ duration: 8, ease: "linear" }}
-                        className="origin-left h-full bg-primary"
+                        className="origin-left h-full bg-white"
                       />
                     </div>
 
                     <div className="flex flex-col items-center text-center gap-6 mt-4">
-                      <div className="p-4 bg-primary/10 rounded-2xl text-primary scale-125 mb-4">
+                      <div className="p-4 bg-white/5 rounded-2xl text-white scale-125 mb-4">
                         {(() => {
                           const Icon = categoryIcons[currentDisplaySkill.category] || Cpu;
                           return <Icon size={48} />;
@@ -274,7 +274,7 @@ export default function Skills() {
               {scanSequence.map((name) => (
                 <div 
                   key={name}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${activeSkillName === name ? 'w-10 bg-primary' : 'w-2 bg-zinc-800'}`}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${activeSkillName === name ? 'w-10 bg-white' : 'w-2 bg-zinc-800'}`}
                 />
               ))}
             </div>
@@ -358,11 +358,11 @@ export default function Skills() {
           </div>
         )}
 
-        {/* Legend */}
+         {/* Legend */}
         <div className="mt-32 pt-12 border-t border-zinc-900 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
            <div className="flex gap-12">
              <div className="flex flex-col gap-1">
-               <span className="text-[10px] font-mono text-primary uppercase tracking-[0.2em]">Tier 03</span>
+               <span className="text-[10px] font-mono text-white uppercase tracking-[0.2em]">Tier 03</span>
                <span className="text-[9px] text-zinc-500 uppercase tracking-widest font-mono">Core Mastery</span>
              </div>
              <div className="flex flex-col gap-1">
@@ -377,7 +377,7 @@ export default function Skills() {
 
            <div className="flex items-center gap-8 opacity-40">
               <div className="flex items-center gap-2">
-                 <MousePointer2 size={12} className="text-primary" />
+                 <MousePointer2 size={12} className="text-white" />
                  <span className="text-[9px] font-mono uppercase tracking-widest">Select Nodes for Bio</span>
               </div>
               <div className="w-px h-4 bg-zinc-800" />
@@ -512,7 +512,7 @@ function SkillNode({ skill, onHover, size, isAutoActive }: SkillNodeProps) {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1.2 }}
             exit={{ opacity: 0, scale: 0.8 }}
-            className="absolute inset-0 bg-primary/10 blur-xl rounded-full -z-10"
+            className="absolute inset-0 bg-white/10 blur-xl rounded-full -z-10"
           />
         )}
       </AnimatePresence>
@@ -543,9 +543,9 @@ function SkillNode({ skill, onHover, size, isAutoActive }: SkillNodeProps) {
       {size === 'large' && (
         <>
           <div className={`absolute -top-2 -left-2 w-4 h-4 border-t-2 border-l-2 transition-colors duration-300
-            ${activeState ? 'border-primary' : 'border-zinc-800'}`} />
+            ${activeState ? 'border-white' : 'border-zinc-800'}`} />
           <div className={`absolute -bottom-2 -right-2 w-4 h-4 border-b-2 border-r-2 transition-colors duration-300
-            ${activeState ? 'border-primary' : 'border-zinc-800'}`} />
+            ${activeState ? 'border-white' : 'border-zinc-800'}`} />
         </>
       )}
     </motion.div>

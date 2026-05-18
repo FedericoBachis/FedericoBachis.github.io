@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { PERSONAL_INFO } from '../constants';
 import { ChevronDown, Sparkles } from 'lucide-react';
+import heroImg from '../hero.png';
 
 export default function Hero() {
   return (
@@ -27,7 +28,7 @@ export default function Hero() {
                {/* Hero Image with "Background Removal" Effect via CSS focus and vignette */}
                <div className="absolute inset-0 bg-zinc-950 z-0" />
                <img 
-                src="/src/hero.png" 
+                src={heroImg} 
                 alt="Federico Bachis - VR Specialist"
                 className="w-full h-full object-cover relative z-10 opacity-90 brightness-110 contrast-110"
                 style={{ 

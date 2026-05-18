@@ -93,15 +93,15 @@ export default function About() {
                <div className="relative flex flex-col items-center justify-center">
                   <span className="text-zinc-500 font-mono text-[7px] uppercase tracking-[0.2em] mb-1">Experience</span>
                   <span className="text-4xl font-black text-white leading-[0.8]">{time.y}</span>
-                  <span className="text-primary font-mono text-[7px] font-bold mt-2 tracking-[0.2em]">YEARS</span>
+                  <span className="text-white font-mono text-[7px] font-bold mt-2 tracking-[0.2em]">YEARS</span>
                </div>
 
                {/* Decorative Crosshair Elements */}
                <div className="absolute inset-0 border border-zinc-800/20 rounded-full scale-[1.08]" />
-               <div className="absolute top-0 left-1/2 -translate-x-1/2 h-1.5 w-px bg-primary/30" />
-               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-1.5 w-px bg-primary/30" />
-               <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-px bg-primary/30" />
-               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-px bg-primary/30" />
+               <div className="absolute top-0 left-1/2 -translate-x-1/2 h-1.5 w-px bg-white/30" />
+               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-1.5 w-px bg-white/30" />
+               <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-px bg-white/30" />
+               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-px bg-white/30" />
             </div>
 
             <div className="flex flex-col justify-center items-center sm:items-start text-center sm:text-left">
@@ -116,8 +116,8 @@ export default function About() {
                  <div className="px-2.5 py-1 bg-zinc-900 border border-zinc-800 rounded-md text-[10px] font-mono text-zinc-400">
                    SYNC_TIME: {String(time.h).padStart(2, '0')}:{String(time.min).padStart(2, '0')}:{String(time.s).padStart(2, '0')}
                  </div>
-                 <div className="flex items-center gap-1.5 px-2.5 py-1 bg-primary/5 border border-primary/20 rounded-md text-[10px] font-mono text-primary">
-                   <div className="w-1 h-1 bg-primary rounded-full animate-pulse" />
+                 <div className="flex items-center gap-1.5 px-2.5 py-1 bg-white/5 border border-white/20 rounded-md text-[10px] font-mono text-white">
+                   <div className="w-1 h-1 bg-white rounded-full animate-pulse" />
                    STATUS: SENIOR_DEV
                  </div>
               </div>

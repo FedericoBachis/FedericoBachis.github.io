@@ -31,7 +31,7 @@ export const PROJECTS = [
     demoLink: "https://creative-lizards.itch.io/goodnight-potion",
     icon: Gamepad2,
     tags: ["Unity", "2D", "Puzzle"],
-    image: "./images/GNP.png",
+    image: "images/GNP.png",
     caseStudy: {
       challenge: "Creating a compelling puzzle mechanic that balances simplicity with deep strategy using limited resources.",
       role: "Lead Developer & Game Designer",
@@ -47,7 +47,7 @@ export const PROJECTS = [
     demoLink: "https://federyuk91.itch.io/distordi",
     icon: Gamepad2,
     tags: ["Unity", "3D", "Multiplayer", "AI"],
-    image: "https://raw.githubusercontent.com/FedericoBachis/FedericoBachis.github.io/refs/heads/main/images/Distordi.jpg",
+    image: "images/Distordi.jpg",
     caseStudy: {
       challenge: "Synchronizing complex puzzle states across multiple players in a 3D environment while integrating generative content.",
       role: "Full Stack Developer (Unity + Photon)",
@@ -63,7 +63,7 @@ export const PROJECTS = [
     demoLink: "https://federyuk91.itch.io/mystupidbigfamily",
     icon: Gamepad2,
     tags: ["Unity", "Ludum Dare", "Simulation"],
-    image: "./images/MSBF.jpg",
+    image: "images/MSBF.jpg",
     caseStudy: {
       challenge: "Implementing a complex AI behavior system for family members within a strict 48-hour time limit.",
       role: "Lead Developer",
@@ -79,7 +79,7 @@ export const PROJECTS = [
     demoLink: "https://federyuk91.itch.io/heroess-tree",
     icon: Gamepad2,
     tags: ["Unity", "Strategy", "Defense"],
-    image: "./images/HT.jpg",
+    image: "images/HT.jpg",
     caseStudy: {
       challenge: "Balancing the growth mechanic of the tree with the difficulty of enemy waves.",
       role: "Game Designer & Developer",
@@ -94,7 +94,7 @@ export const PROJECTS = [
     link: "https://www.crs4.it/it/projectdetails/IDEALIA/",
     icon: FlaskConical,
     tags: ["Digital Twins", "Unity", "Heritage"],
-    image: "./images/Idealia.jpg",
+    image: "images/Idealia.jpg",
     caseStudy: {
       challenge: "Accurately representing real-world museum environments while maintaining high performance for web and mobile VR browsers.",
       role: "Research Technologist @ CRS4",
@@ -103,13 +103,13 @@ export const PROJECTS = [
     }
   },
   {
-    title: "Rossana",
-    description: "Anthropomorphic robotic assistant developed to guide visitors in library settings. Integrated with Unity, Arduino, and ROS.",
+    title: "ATM / Rossana",
+    description: "Anthropomorphic robotic assistant (ATM) developed to guide visitors in library settings. Integrated with Unity, Arduino, and ROS.",
     type: "Research",
     link: "https://www.crs4.it/it/news-view/rossana-il-robot-antropomorfo-sviluppato-dal-crs4/",
     icon: Cpu,
     tags: ["Unity", "ROS", "Arduino", "Robotics"],
-    image: "./images/Rossana.gif",
+    image: "images/ATM.jpg",
     caseStudy: {
       challenge: "Creating a seamless communication bridge between a high-level game engine (Unity) and low-level robotics middleware (ROS).",
       role: "System Architect & Unity Developer",
@@ -125,7 +125,7 @@ export const PROJECTS = [
     videoUrl: "https://www.youtube.com/embed/lBzVPqVZsJg",
     icon: Box,
     tags: ["VR", "Photogrammetry", "History"],
-    image: "./images/Sarim.jpg",
+    image: "images/Sarim.jpg",
     caseStudy: {
       challenge: "Capturing and digitizing large-scale archaeological sites with millimetric precision for an immersive VR setting.",
       role: "VR Developer & Photographer",
@@ -140,12 +140,42 @@ export const PROJECTS = [
     link: "#",
     icon: Dices,
     tags: ["Tabletop", "Strategy", "Space"],
-    image: "./images/OOH.jpg",
+    image: "images/OOH.jpg",
     caseStudy: {
       challenge: "Distilling complex space mechanics into an accessible card-based strategy game.",
       role: "Game Designer & Illustrator",
       solution: "Focused on an 'emergent narrative' approach where card interactions tell a story of desperate survival.",
       result: "Prototype testing showed high engagement and 'one-more-round' appeal."
+    }
+  },
+  {
+    title: "Water System for Unity",
+    description: "A custom water shader and buoyancy system developed for low-poly environments in Unity.",
+    type: "Research",
+    link: "#",
+    icon: FlaskConical,
+    tags: ["Unity", "Shaders", "Optimized"],
+    image: "images/WS.jpg",
+    caseStudy: {
+      challenge: "Creating realistic water effects using minimal performance overhead on mobile VR.",
+      role: "Shader Developer",
+      solution: "Wrote custom HLSL shaders focusing on vertex displacement and depth-based color blending.",
+      result: "Used internally at CRS4 for various nautical simulation projects."
+    }
+  },
+  {
+    title: "Tree System / Terrain Gen",
+    description: "Algorithmic placement and growth system for large-scale forest environments in Unity.",
+    type: "Research",
+    link: "#",
+    icon: Cpu,
+    tags: ["Unity", "Procedural", "Optimization"],
+    image: "images/TS.jpg",
+    caseStudy: {
+      challenge: "Managing thousands of unique tree instances while maintaining high frame rates in VR.",
+      role: "Unity Developer",
+      solution: "Implemented GPU instancing and distance-based growth logic for efficient large-scale environment management.",
+      result: "Significantly reduced draw calls in research environment prototypes."
     }
   }
 ];
