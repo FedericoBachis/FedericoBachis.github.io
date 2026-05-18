@@ -179,8 +179,12 @@ export default function About() {
                <motion.div 
                 animate={{ rotateY: 360 }}
                 transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
-                className="absolute inset-4 border-[12px] border-primary/20 rounded-[40px] rotate-[15deg] shadow-[0_0_20px_rgba(20,184,166,0.1)]"
-                style={{ transformStyle: 'preserve-3d', transform: 'translateZ(0px)' }}
+                className="absolute inset-4 border-[12px] border-primary/20 rounded-[40px] shadow-[0_0_20px_rgba(20,184,166,0.1)]"
+                style={{ 
+                  transformStyle: 'preserve-3d', 
+                  translateZ: '0px',
+                  rotate: '15deg'
+                }}
                />
             </div>
           </div>
