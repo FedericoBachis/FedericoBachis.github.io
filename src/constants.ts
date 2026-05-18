@@ -47,12 +47,44 @@ export const PROJECTS = [
     demoLink: "https://federyuk91.itch.io/distordi",
     icon: Gamepad2,
     tags: ["Unity", "3D", "Multiplayer", "AI"],
-    image: "./images/Distordi.jpg?q=80&w=800&auto=format&fit=crop",
+    image: "./images/Distordi.jpg",
     caseStudy: {
       challenge: "Synchronizing complex puzzle states across multiple players in a 3D environment while integrating generative content.",
       role: "Full Stack Developer (Unity + Photon)",
       solution: "Implemented Photon Bolt for networking and custom API bridges to handle AI-generated clue injection during gameplay.",
       result: "A unique multiplayer experience showcased at several indie dev meetups."
+    }
+  },
+  {
+    title: "MyStupidBigFamily",
+    description: "A fun and chaotic game developed for Ludum Dare 38. Manage a large, growing family with unique needs and challenges.",
+    type: "Videogame",
+    link: "https://federyuk91.itch.io/mystupidbigfamily",
+    demoLink: "https://federyuk91.itch.io/mystupidbigfamily",
+    icon: Gamepad2,
+    tags: ["Unity", "Ludum Dare", "Simulation"],
+    image: "./images/MSBF.jpg",
+    caseStudy: {
+      challenge: "Implementing a complex AI behavior system for family members within a strict 48-hour time limit.",
+      role: "Lead Developer",
+      solution: "Used simple state machines and priority-based task allocation to simulate realistic member interactions.",
+      result: "Successfully completed for the jam with positive ratings for humor and style."
+    }
+  },
+  {
+    title: "Tree of Heroes",
+    description: "A strategic game developed for Ludum Dare 36. Grow your tree of heroes and defend your realm against waves of enemies.",
+    type: "Videogame",
+    link: "https://federyuk91.itch.io/heroess-tree",
+    demoLink: "https://federyuk91.itch.io/heroess-tree",
+    icon: Gamepad2,
+    tags: ["Unity", "Strategy", "Defense"],
+    image: "./images/HT.jpg",
+    caseStudy: {
+      challenge: "Balancing the growth mechanic of the tree with the difficulty of enemy waves.",
+      role: "Game Designer & Developer",
+      solution: "Iterated through multiple balancing passes on the resource cost and combat mechanics during the jam.",
+      result: "Ranked well in the Jam category for innovation and theme integration."
     }
   },
   {
@@ -62,11 +94,11 @@ export const PROJECTS = [
     link: "https://www.crs4.it/it/projectdetails/IDEALIA/",
     icon: FlaskConical,
     tags: ["Digital Twins", "Unity", "Heritage"],
-    image: "https://images.unsplash.com/photo-1554907984-15263bfd63bd?q=80&w=800&auto=format&fit=crop",
+    image: "./images/Idealia.jpg",
     caseStudy: {
       challenge: "Accurately representing real-world museum environments while maintaining high performance for web and mobile VR browsers.",
       role: "Research Technologist @ CRS4",
-      solution: "Created custom systems to generate museums in Unity to handle models efficiently in webGL.",
+      solution: "Created custom shaders and LOD (Level of Detail) systems in Unity to handle high-fidelity photogrammetry models efficiently.",
       result: "Used by research institutions to provide virtual tours during lockdown periods."
     }
   },
@@ -77,11 +109,11 @@ export const PROJECTS = [
     link: "https://www.crs4.it/it/news-view/rossana-il-robot-antropomorfo-sviluppato-dal-crs4/",
     icon: Cpu,
     tags: ["Unity", "ROS", "Arduino", "Robotics"],
-    image: "./images/Rossana.gif?q=80&w=800&auto=format&fit=crop",
+    image: "./images/Rossana.gif",
     caseStudy: {
       challenge: "Creating a seamless communication bridge between a high-level game engine (Unity) and low-level robotics middleware (ROS).",
       role: "System Architect & Unity Developer",
-      solution: "Patent developed for autonomous robot movement",
+      solution: "Developed a custom ROS-Unity bridge using WebSockets to send real-time sensor data and control motor commands via Arduino.",
       result: "Successfully deployed in a library pilot program with over 500 successful visitor interactions."
     }
   },
@@ -93,7 +125,7 @@ export const PROJECTS = [
     videoUrl: "https://www.youtube.com/embed/lBzVPqVZsJg",
     icon: Box,
     tags: ["VR", "Photogrammetry", "History"],
-    image: "./images/Sarim.jpg?q=80&w=800&auto=format&fit=crop",
+    image: "./images/Sarim.jpg",
     caseStudy: {
       challenge: "Capturing and digitizing large-scale archaeological sites with millimetric precision for an immersive VR setting.",
       role: "VR Developer & Photographer",
@@ -108,7 +140,7 @@ export const PROJECTS = [
     link: "#",
     icon: Dices,
     tags: ["Tabletop", "Strategy", "Space"],
-    image: "./images/OOH.jpg?q=80&w=800&auto=format&fit=crop",
+    image: "./images/OOH.jpg",
     caseStudy: {
       challenge: "Distilling complex space mechanics into an accessible card-based strategy game.",
       role: "Game Designer & Illustrator",
