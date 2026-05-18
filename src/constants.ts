@@ -31,7 +31,7 @@ export const PROJECTS = [
     demoLink: "https://creative-lizards.itch.io/goodnight-potion",
     icon: Gamepad2,
     tags: ["Unity", "2D", "Puzzle"],
-    image: "./images/GNP.png?q=80&w=800&auto=format&fit=crop",
+    image: "./images/GNP.png",
     caseStudy: {
       challenge: "Creating a compelling puzzle mechanic that balances simplicity with deep strategy using limited resources.",
       role: "Lead Developer & Game Designer",
