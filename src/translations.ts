@@ -395,7 +395,7 @@ export const translations = {
           title: "Digital Twins per i Beni Culturali",
           description: "Sviluppo di prototipi e strumenti editor per la creazione di gemelli digitali di musei (Progetto IDEALIA).",
           type: "Ricerca",
-          link: "https://www.crs4.it/it/projectdetails/IDEALIA/",
+          link: "https://www.crs4.it/projects/idealia/",
           icon: FlaskConical,
           tags: ["Digital Twins", "Unity", "Heritage"],
           image: idealiaImg,
