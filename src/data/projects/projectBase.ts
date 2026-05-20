@@ -26,7 +26,7 @@ export const projectBase: Record<ProjectId, ProjectBaseItem> = {
     image: gnpImg,
     link: "https://creative-lizards.itch.io/goodnight-potion",
     demoLink: "https://creative-lizards.itch.io/goodnight-potion",
-    tags: ["Unity", "2D", "Puzzle"]
+    tags: ["Unity", "2D", "Puzzle", "MiniJam"]
   },
   distordi: {
     pubYear: "2026",
@@ -34,8 +34,8 @@ export const projectBase: Record<ProjectId, ProjectBaseItem> = {
     image: distordiImg,
     link: "https://federyuk91.itch.io/distordi",
     demoLink: "https://federyuk91.itch.io/distordi",
-    videoUrl: "https://youtu.be/e4Bkv_CNf44?si=iFyrLepNPVlFsH_o",
-    tags: ["Unity", "3D", "Multiplayer", "AI"]
+    videoUrl: "https://www.youtube.com/embed/e4Bkv_CNf44",
+    tags: ["Unity", "3D", "Multiplayer", "AI", "GGJ"]
   },
   myStupidBigFamily: {
     pubYear: "2021",
@@ -43,7 +43,7 @@ export const projectBase: Record<ProjectId, ProjectBaseItem> = {
     image: msbfImg,
     link: "https://federyuk91.itch.io/mystupidbigfamily",
     demoLink: "https://federyuk91.itch.io/mystupidbigfamily",
-    tags: ["Unity", "Ludum Dare", "Simulation"]
+    tags: ["Unity", "GGJ", "Simulation"]
   },
   treeOfHeroes: {
     pubYear: "2020",
@@ -80,7 +80,7 @@ export const projectBase: Record<ProjectId, ProjectBaseItem> = {
     authors: "Federico Bachis, Marco Massa, Gavin Brelstaff, Massimo Deriu",
     link: "https://patentimages.storage.googleapis.com/f2/e7/e3/bcf1a713448e07/WO2023053048A1.pdf",
     demoLink: "https://patentimages.storage.googleapis.com/f2/e7/e3/bcf1a713448e07/WO2023053048A1.pdf",
-    videoUrl: "https://youtu.be/6WboZm0ffIM?si=hqDCqOb9fegmh4_L",
+    videoUrl: "https://www.youtube.com/embed/6WboZm0ffIM",
     tags: ["WIPO Patent", "Intellectual Property", "Human-Robot Interaction"]
   },
   fireEvacuation: {
@@ -107,14 +107,14 @@ export const projectBase: Record<ProjectId, ProjectBaseItem> = {
     icon: Dices,
     image: oohImg,
     link: "#",
-    tags: ["Tabletop", "Strategy", "Space"]
+    tags: ["Tabletop", "Strategy", "Space", "IdeaG"]
   },
   pinguini: {
     pubYear: "2026",
     icon: Dices,
     image: pinguiniImg,
     link: "https://pinguini-alla-deriva-446895826488.europe-west2.run.app/",
-    tags: ["Web", "Strategy", "Multiplayer"]
+    tags: ["Web", "Strategy", "Multiplayer", "IdeaG"]
   },
   wurmSlayer: {
     pubYear: "2023",

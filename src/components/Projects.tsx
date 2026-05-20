@@ -14,6 +14,36 @@ import {
 } from 'lucide-react';
 import { useLanguage } from '../App';
 
+const getYouTubeEmbedUrl = (url: string): string => {
+  if (!url) return '';
+  if (url.includes('/embed/')) return url;
+
+  let videoId = '';
+  if (url.includes('youtu.be/')) {
+    const parts = url.split('youtu.be/');
+    if (parts[1]) {
+      videoId = parts[1].split('?')[0];
+    }
+  } else if (url.includes('youtube.com/watch')) {
+    try {
+      const queryStr = url.split('?')[1];
+      if (queryStr) {
+        const urlParams = new URLSearchParams(queryStr);
+        videoId = urlParams.get('v') || '';
+      }
+    } catch {
+      // fallback
+    }
+  } else if (url.includes('youtube.com/embed/')) {
+    const parts = url.split('youtube.com/embed/');
+    if (parts[1]) {
+      videoId = parts[1].split('?')[0];
+    }
+  }
+
+  return videoId ? `https://www.youtube.com/embed/${videoId}` : url;
+};
+
 export default function Projects() {
   const { t } = useLanguage();
   const [filter, setFilter] = useState('All');
@@ -240,7 +270,7 @@ export default function Projects() {
               <div className="w-full md:w-3/5 bg-zinc-950 relative overflow-hidden flex items-center justify-center border-b md:border-b-0 md:border-r border-zinc-800 h-64 md:h-full">
                 {selectedProject.videoUrl ? (
                   <iframe 
-                    src={selectedProject.videoUrl}
+                    src={getYouTubeEmbedUrl(selectedProject.videoUrl)}
                     className="w-full h-full border-none"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
