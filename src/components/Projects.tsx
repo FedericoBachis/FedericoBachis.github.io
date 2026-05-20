@@ -19,13 +19,24 @@ export default function Projects() {
   const [filter, setFilter] = useState('All');
   const [selectedProject, setSelectedProject] = useState<any | null>(null);
   
+  // Sort projects by year (pubYear) descending (most recent first)
+  const sortProjectsByYear = (projects: any[]) => {
+    return [...projects].sort((a, b) => {
+      const yearA = parseInt(a.pubYear) || 0;
+      const yearB = parseInt(b.pubYear) || 0;
+      return yearB - yearA;
+    });
+  };
+
+  const sortedAllProjects = sortProjectsByYear(t.projects.data);
+  
   // Get all unique types from project data
-  const types = Array.from(new Set(t.projects.data.map(p => (p as any).type))) as string[];
+  const types = Array.from(new Set(sortedAllProjects.map(p => (p as any).type))) as string[];
   const categories = ['All', ...types];
 
   const filteredProjects = filter === 'All' 
-    ? t.projects.data 
-    : t.projects.data.filter(p => p.type === filter);
+    ? sortedAllProjects 
+    : sortedAllProjects.filter(p => p.type === filter);
 
   const getCategoryIcon = (catName: string) => {
     const name = catName.toLowerCase();
@@ -70,12 +81,19 @@ export default function Projects() {
              </div>
            </div>
          ) : (
-           <img 
-            src={project.image} 
-            alt={project.title}
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-60 group-hover:opacity-100"
-            referrerPolicy="no-referrer"
-           />
+           <>
+             <img 
+              src={project.image} 
+              alt={project.title}
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-60 group-hover:opacity-100"
+              referrerPolicy="no-referrer"
+             />
+             {project.pubYear && (
+               <div className="absolute top-4 right-4 z-10 bg-zinc-950/85 backdrop-blur-md border border-zinc-800/80 text-[10px] font-mono font-bold text-primary px-2.5 py-0.5 rounded-lg shadow-lg">
+                 {project.pubYear}
+               </div>
+             )}
+           </>
          )}
          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent pointer-events-none" />
          <div className="absolute bottom-4 left-4">
@@ -162,7 +180,7 @@ export default function Projects() {
         ) : (
           <div className="space-y-16">
             {types.map((type) => {
-              const projectsInType = t.projects.data.filter(p => p.type === type);
+              const projectsInType = sortProjectsByYear(t.projects.data.filter(p => p.type === type));
               if (projectsInType.length === 0) return null;
               return (
                 <div key={type} className="space-y-6">
@@ -267,6 +285,11 @@ export default function Projects() {
                     <span className="px-3 py-1 bg-white/10 text-white border border-white/20 rounded-full text-[10px] font-mono tracking-widest uppercase">
                       {t.projects.subtitle}
                     </span>
+                    {selectedProject.pubYear && (
+                      <span className="px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full text-[10px] font-mono tracking-widest uppercase">
+                        {selectedProject.pubYear}
+                      </span>
+                    )}
                     <span className="text-zinc-600 font-mono text-[10px] uppercase">
                       ID: {String(t.projects.data.indexOf(selectedProject) + 1).padStart(3, '0')}
                     </span>
