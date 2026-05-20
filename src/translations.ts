@@ -10,7 +10,8 @@ import {
   Cpu, 
   Box, 
   Terminal, 
-  Globe 
+  Globe,
+  BookOpen
 } from 'lucide-react';
 import gnpImg from './imgs/GNP.png';
 import distordiImg from './imgs/Distordi.jpg';
@@ -143,6 +144,52 @@ export const translations = {
             role: "Research Technologist @ CRS4",
             solution: "Created custom shaders and LOD (Level of Detail) systems in Unity to handle high-fidelity photogrammetry models efficiently.",
             result: "Used by research institutions to provide virtual tours during lockdown periods."
+          }
+        },
+        {
+          title: "Conversational NPC Tourist Guide in VR",
+          description: "IEEE research publication on improving user engagement in fully immersive environments. Specifically evaluates historical data retention and spatial behavior when guided by an interactive AI conversational agent.",
+          type: "Publications",
+          link: "https://ieeexplore.ieee.org/document/9604871",
+          demoLink: "https://ieeexplore.ieee.org/document/9604871",
+          icon: BookOpen,
+          tags: ["IEEE", "Research Paper", "AI / NPCs", "Immersive VR"],
+          image: "paper",
+          isPaper: true,
+          journal: "IEEE Xplore",
+          pubYear: "2021",
+          pubDate: "Published: Nov 2021",
+          doi: "10.1109/9604871",
+          authors: "Federico Bachis, et al.",
+          paperSubtitle: "CONVERSATIONAL AGENT",
+          caseStudy: {
+            challenge: "Evaluating spatial and conversational interaction parameters within full-presence headsets to establish meaningful cultural-tourist interaction metrics.",
+            role: "Co-Author & Lead XR Developer",
+            solution: "Engineered the direct speech interface, directional animation controllers, and state tree trackers coordinating the virtual NPC within a complete 3D VR heritage rendering.",
+            result: "Peer-reviewed publication indicating a significant improvement in temporal orientation and high subjective satisfaction markers across targeted focus groups."
+          }
+        },
+        {
+          title: "Behavioral Models for Fire Evacuation Simulations in Unity",
+          description: "SAGE research publication on utilizing the Unity ML-Agents toolkit to model the behavior of individuals evacuating from indoor fires. Investigates reinforcement learning for human-like crisis locomotion and navigation.",
+          type: "Publications",
+          link: "https://journals.sagepub.com/doi/10.1177/00375497261428103",
+          demoLink: "https://journals.sagepub.com/doi/10.1177/00375497261428103",
+          icon: BookOpen,
+          tags: ["SAGE", "ML-Agents", "Evacuation AI", "Research Paper"],
+          image: "paper",
+          isPaper: true,
+          journal: "SAGE / SIMULATION",
+          pubYear: "2026",
+          pubDate: "Published: May 2026",
+          doi: "10.1177/00375497261428103",
+          authors: "Marco Massa, Federico Bachis, Gavin Brelstaff, Massimo Deriu",
+          paperSubtitle: "EVACUATION SIMULATION",
+          caseStudy: {
+            challenge: "Simulating plausible, realistic human behavior under high stress and panic inside complex indoor layouts.",
+            role: "Co-Author & ML Simulation Engineer",
+            solution: "Trained multi-agent reinforcement learning behavior trees using Unity ML-Agents with perception cameras and social forces parameters.",
+            result: "A robust framework validating the feasibility of utilizing deep reinforcement learning to predict emergent bottleneck formations during emergency departures."
           }
         },
         {
@@ -404,6 +451,52 @@ export const translations = {
             role: "Tecnologo della ricerca @ CRS4",
             solution: "Creati shader personalizzati e sistemi LOD (Level of Detail) in Unity per gestire modelli fotogrammetrici ad alta fedeltà.",
             result: "Utilizzato da istituzioni di ricerca per tour virtuali durante i periodi di lockdown."
+          }
+        },
+        {
+          title: "Conversational NPC Tourist Guide in VR",
+          description: "Pubblicazione scientifica (IEEE) sull'aumento dell'engagement dell'utente in ambienti virtuali immersivi, studiando i livelli di memorizzazione dei percorsi storici con un NPC conversazionale dotato di intelligenza artificiale.",
+          type: "Pubblicazioni",
+          link: "https://ieeexplore.ieee.org/document/9604871",
+          demoLink: "https://ieeexplore.ieee.org/document/9604871",
+          icon: BookOpen,
+          tags: ["IEEE", "Paper Scientifico", "AI / NPC", "VR Immersiva"],
+          image: "paper",
+          isPaper: true,
+          journal: "IEEE Xplore",
+          pubYear: "2021",
+          pubDate: "Pubblicato: Nov 2021",
+          doi: "10.1109/9604871",
+          authors: "Federico Bachis, et al.",
+          paperSubtitle: "AGENTE CONVERSAZIONALE",
+          caseStudy: {
+            challenge: "Valutare l'usabilità complessiva e l'impatto cognitivo di un agente vocale che guida passeggeri e turisti all'interno di ambienti immersivi ad alta interattività.",
+            role: "Co-Autore & Sviluppatore Lead XR",
+            solution: "Sviluppato il sistema di audio spaziale, le routine di tracciamento e le macchine a stati decisionali del prototipo VR interamente integrato in Unity.",
+            result: "La pubblicazione scientifica ha dimostrato un incremento sostanziale della rievocazione cognitiva dei beni esposti e del tasso di gradimento generale."
+          }
+        },
+        {
+          title: "Modelli di Comportamento per l'Evacuazione da Incendio in Unity",
+          description: "Pubblicazione scientifica (SAGE / SIMULATION) sull'uso di Unity ML-Agents per modellare il comportamento di persone durante l'evacuazione da incendi indoor tramite apprendimento per rinforzo per una locomozione di crisi verosimile.",
+          type: "Pubblicazioni",
+          link: "https://journals.sagepub.com/doi/10.1177/00375497261428103",
+          demoLink: "https://journals.sagepub.com/doi/10.1177/00375497261428103",
+          icon: BookOpen,
+          tags: ["SAGE", "ML-Agents", "IA Evacuazione", "Paper Scientifico"],
+          image: "paper",
+          isPaper: true,
+          journal: "SAGE / SIMULATION",
+          pubYear: "2026",
+          pubDate: "Pubblicato: Mag 2026",
+          doi: "10.1177/00375497261428103",
+          authors: "Marco Massa, Federico Bachis, Gavin Brelstaff, Massimo Deriu",
+          paperSubtitle: "SIMULAZIONE EVACUAZIONE",
+          caseStudy: {
+            challenge: "Simulare dinamiche credibili di panico e movimento umano in situazioni ad alto stress all'interno di planimetrie complesse.",
+            role: "Co-Autore & Ingegnere di Simulazione ML",
+            solution: "Addestramento di agenti tramite Deep Reinforcement Learning (ML-Agents) provvisti di sensori visivi e parametri di forza sociale.",
+            result: "La pubblicazione scientifica ha validato l'usabilità di modelli ad agenti auto-appresi per prevedere colli di bottiglia ed anomalie durante le emergenze."
           }
         },
         {

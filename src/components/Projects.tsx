@@ -1,6 +1,17 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ExternalLink, X, PlayCircle, Info, ArrowRight } from 'lucide-react';
+import { 
+  ExternalLink, 
+  X, 
+  PlayCircle, 
+  Info, 
+  ArrowRight,
+  Gamepad2,
+  Dices,
+  FlaskConical,
+  BookOpen,
+  Layers
+} from 'lucide-react';
 import { useLanguage } from '../App';
 
 export default function Projects() {
@@ -15,6 +26,16 @@ export default function Projects() {
   const filteredProjects = filter === 'All' 
     ? t.projects.data 
     : t.projects.data.filter(p => p.type === filter);
+
+  const getCategoryIcon = (catName: string) => {
+    const name = catName.toLowerCase();
+    if (name === 'all') return <Layers size={14} className="shrink-0 group-hover:scale-110 transition-transform" />;
+    if (name.includes('video')) return <Gamepad2 size={14} className="shrink-0 group-hover:scale-110 transition-transform" />;
+    if (name.includes('ricerca') || name.includes('research')) return <FlaskConical size={14} className="shrink-0 group-hover:scale-110 transition-transform" />;
+    if (name.includes('boardgame')) return <Dices size={14} className="shrink-0 group-hover:scale-110 transition-transform" />;
+    if (name.includes('pubblic') || name.includes('public')) return <BookOpen size={14} className="shrink-0 group-hover:scale-110 transition-transform" />;
+    return null;
+  };
 
   // Prevent scroll when modal is open
   useEffect(() => {
@@ -33,20 +54,24 @@ export default function Projects() {
             <span className="text-white font-mono text-xs mb-4 block uppercase tracking-widest opacity-50 italic">Interactive Showcase</span>
             <h2 className="text-4xl md:text-5xl font-black italic tracking-tight uppercase">{t.projects.title} <span className="text-zinc-500">WORKS</span></h2>
           </div>
-          <div className="flex flex-wrap justify-center bg-zinc-950 p-1.5 rounded-2xl border border-zinc-800 shadow-2xl backdrop-blur-sm self-center">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setFilter(cat)}
-                className={`px-4 py-2 rounded-lg text-xs font-mono transition-all duration-300 ${
-                  filter === cat 
-                    ? 'bg-primary text-zinc-950 px-6 font-bold' 
-                    : 'text-zinc-500 hover:text-zinc-300'
-                }`}
-              >
-                {cat === 'All' ? (t.language === 'it' ? 'Tutti' : 'All') : cat}
-              </button>
-            ))}
+          <div className="flex flex-wrap justify-center bg-zinc-950 p-1.5 rounded-2xl border border-zinc-800 shadow-2xl backdrop-blur-sm self-center gap-1">
+            {categories.map((cat) => {
+              const catStr = cat as string;
+              return (
+                <button
+                  key={catStr}
+                  onClick={() => setFilter(catStr)}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-mono transition-all duration-300 group ${
+                    filter === catStr 
+                      ? 'bg-primary text-zinc-950 px-6 font-bold shadow-[0_0_15px_rgba(20,184,166,0.3)]' 
+                      : 'text-zinc-500 hover:text-zinc-300'
+                  }`}
+                >
+                  {getCategoryIcon(catStr)}
+                  <span>{catStr === 'All' ? (t.language === 'it' ? 'Tutti' : 'All') : catStr}</span>
+                </button>
+              );
+            })}
           </div>
         </div>
 
@@ -67,14 +92,35 @@ export default function Projects() {
                 onClick={() => setSelectedProject(project)}
               >
                 {/* Image Header */}
-                <div className="relative h-48 overflow-hidden bg-zinc-800">
-                   <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-60 group-hover:opacity-100"
-                    referrerPolicy="no-referrer"
-                   />
-                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent" />
+                <div className="relative h-48 overflow-hidden bg-zinc-800 flex items-center justify-center">
+                   {project.isPaper ? (
+                     <div className="absolute inset-0 p-6 flex flex-col justify-between font-mono bg-gradient-to-br from-zinc-950 via-zinc-900 to-emerald-950/40 border-b border-zinc-800 w-full h-full group-hover:scale-105 transition-transform duration-500">
+                       <div className="flex justify-between items-center text-[8px] text-zinc-500">
+                         <span className="uppercase tracking-widest bg-zinc-950 px-2 py-0.5 rounded border border-zinc-800/80 text-primary">{project.journal || 'IEEE Xplore'}</span>
+                         <span>{project.pubYear || '2021'}</span>
+                       </div>
+                       <div className="text-left my-auto">
+                         <p className="text-[11px] text-zinc-100 font-bold leading-snug line-clamp-2 uppercase tracking-wide">
+                           {project.title}
+                         </p>
+                         <p className="text-[9px] text-zinc-500 mt-1">
+                           {project.authors ? (project.authors.includes(',') ? project.authors.split(',')[0] + ' et al.' : project.authors) : 'Bachis et al.'}
+                         </p>
+                       </div>
+                       <div className="flex justify-between items-center text-[8px] text-zinc-500 tracking-wider">
+                         <span>{project.paperSubtitle || 'RESEARCH PAPER'}</span>
+                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                       </div>
+                     </div>
+                   ) : (
+                     <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-60 group-hover:opacity-100"
+                      referrerPolicy="no-referrer"
+                     />
+                   )}
+                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent pointer-events-none" />
                    <div className="absolute bottom-4 left-4">
                       <div className="flex gap-2">
                         {project.tags.slice(0, 2).map(tag => (
@@ -145,6 +191,27 @@ export default function Projects() {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   />
+                ) : selectedProject.isPaper ? (
+                  <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-between font-mono bg-gradient-to-br from-zinc-950 via-zinc-900 to-emerald-950/60 leading-normal w-full h-full">
+                    <div className="flex justify-between items-center text-[10px] text-zinc-500">
+                      <span className="uppercase tracking-widest bg-zinc-900 px-3 py-1 rounded border border-zinc-800 text-primary animate-pulse">{selectedProject.journal || 'Research Paper'}</span>
+                      <span>{selectedProject.pubDate || 'Published'}</span>
+                    </div>
+                    <div className="text-left my-auto space-y-4">
+                      <span className="text-[9px] uppercase font-bold tracking-widest bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-1 rounded-full inline-block">Primary Research</span>
+                      <p className="text-sm md:text-xl lg:text-2xl text-white font-extrabold leading-tight tracking-tight uppercase">
+                        {selectedProject.title}
+                      </p>
+                      <p className="text-xs text-zinc-400">Authors: {selectedProject.authors} | DOI: {selectedProject.doi}</p>
+                    </div>
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 text-[10px] text-zinc-500 tracking-widest border-t border-zinc-800/60 pt-4">
+                      <span>CRS4 SYSTEMS RESEARCH</span>
+                      <div className="flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                        <span className="text-[10px] text-zinc-400">INDEXED</span>
+                      </div>
+                    </div>
+                  </div>
                 ) : (
                   <img 
                     src={selectedProject.image} 
