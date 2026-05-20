@@ -20,7 +20,7 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<any | null>(null);
   
   // Get all unique types from project data
-  const types = Array.from(new Set(t.projects.data.map(p => p.type)));
+  const types = Array.from(new Set(t.projects.data.map(p => (p as any).type))) as string[];
   const categories = ['All', ...types];
 
   const filteredProjects = filter === 'All' 
@@ -36,6 +36,81 @@ export default function Projects() {
     if (name.includes('pubblic') || name.includes('public')) return <BookOpen size={14} className="shrink-0 group-hover:scale-110 transition-transform" />;
     return null;
   };
+
+  const renderProjectCard = (project: any, idx: number) => (
+    <motion.div
+      layout
+      key={project.title}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, scale: 0.9 }}
+      transition={{ duration: 0.4, delay: idx * 0.05 }}
+      className="glass-card group rounded-3xl overflow-hidden flex flex-col h-full cursor-pointer"
+      onClick={() => setSelectedProject(project)}
+    >
+      {/* Image Header */}
+      <div className="relative h-48 overflow-hidden bg-zinc-800 flex items-center justify-center">
+         {project.isPaper ? (
+           <div className="absolute inset-0 p-6 flex flex-col justify-between font-mono bg-gradient-to-br from-zinc-950 via-zinc-900 to-emerald-950/40 border-b border-zinc-800 w-full h-full group-hover:scale-105 transition-transform duration-500">
+             <div className="flex justify-between items-center text-[8px] text-zinc-500">
+               <span className="uppercase tracking-widest bg-zinc-950 px-2 py-0.5 rounded border border-zinc-800/80 text-primary">{project.journal || 'IEEE Xplore'}</span>
+               <span>{project.pubYear || '2021'}</span>
+             </div>
+             <div className="text-left my-auto">
+               <p className="text-[11px] text-zinc-100 font-bold leading-snug line-clamp-2 uppercase tracking-wide">
+                 {project.title}
+               </p>
+               <p className="text-[9px] text-zinc-500 mt-1">
+                 {project.authors ? (project.authors.includes(',') ? project.authors.split(',')[0] + ' et al.' : project.authors) : 'Bachis et al.'}
+               </p>
+             </div>
+             <div className="flex justify-between items-center text-[8px] text-zinc-500 tracking-wider">
+               <span>{project.paperSubtitle || 'RESEARCH PAPER'}</span>
+               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+             </div>
+           </div>
+         ) : (
+           <img 
+            src={project.image} 
+            alt={project.title}
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-60 group-hover:opacity-100"
+            referrerPolicy="no-referrer"
+           />
+         )}
+         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent pointer-events-none" />
+         <div className="absolute bottom-4 left-4">
+            <div className="flex gap-2">
+              {project.tags.slice(0, 2).map((tag: string) => (
+                <span key={tag} className="px-2 py-0.5 rounded-full bg-zinc-950/80 backdrop-blur-md border border-zinc-700 text-[9px] font-mono text-zinc-300 uppercase tracking-wider">
+                  {tag}
+                </span>
+              ))}
+            </div>
+         </div>
+      </div>
+
+      <div className="p-6 flex flex-col flex-grow">
+        <div className="flex justify-between items-start mb-4">
+          <h3 className="text-xl font-bold group-hover:text-primary transition-colors leading-tight">{project.title}</h3>
+          <div className="p-2 rounded-lg bg-zinc-800 text-primary group-hover:bg-primary group-hover:text-zinc-950 transition-colors">
+            <project.icon size={18} />
+          </div>
+        </div>
+        
+        <p className="text-zinc-400 text-sm font-light mb-6 flex-grow leading-relaxed line-clamp-3">
+          {project.description}
+        </p>
+
+        <div className="flex items-center justify-between pt-4 border-t border-zinc-800 mt-auto">
+          <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest flex items-center gap-2 group-hover:text-white transition-colors">
+            <Info size={12} className="text-zinc-300" />
+            {t.language === 'it' ? 'Vedi Dettagli' : 'View Details'}
+          </span>
+          <ArrowRight size={16} className="text-zinc-600 group-hover:text-white transition-colors group-hover:translate-x-1" />
+        </div>
+      </div>
+    </motion.div>
+  );
 
   // Prevent scroll when modal is open
   useEffect(() => {
@@ -75,87 +150,48 @@ export default function Projects() {
           </div>
         </div>
 
-        <motion.div 
-          layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          <AnimatePresence mode='popLayout'>
-            {filteredProjects.map((project, idx) => (
-              <motion.div
-                layout
-                key={project.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.4, delay: idx * 0.05 }}
-                className="glass-card group rounded-3xl overflow-hidden flex flex-col h-full cursor-pointer"
-                onClick={() => setSelectedProject(project)}
-              >
-                {/* Image Header */}
-                <div className="relative h-48 overflow-hidden bg-zinc-800 flex items-center justify-center">
-                   {project.isPaper ? (
-                     <div className="absolute inset-0 p-6 flex flex-col justify-between font-mono bg-gradient-to-br from-zinc-950 via-zinc-900 to-emerald-950/40 border-b border-zinc-800 w-full h-full group-hover:scale-105 transition-transform duration-500">
-                       <div className="flex justify-between items-center text-[8px] text-zinc-500">
-                         <span className="uppercase tracking-widest bg-zinc-950 px-2 py-0.5 rounded border border-zinc-800/80 text-primary">{project.journal || 'IEEE Xplore'}</span>
-                         <span>{project.pubYear || '2021'}</span>
-                       </div>
-                       <div className="text-left my-auto">
-                         <p className="text-[11px] text-zinc-100 font-bold leading-snug line-clamp-2 uppercase tracking-wide">
-                           {project.title}
-                         </p>
-                         <p className="text-[9px] text-zinc-500 mt-1">
-                           {project.authors ? (project.authors.includes(',') ? project.authors.split(',')[0] + ' et al.' : project.authors) : 'Bachis et al.'}
-                         </p>
-                       </div>
-                       <div className="flex justify-between items-center text-[8px] text-zinc-500 tracking-wider">
-                         <span>{project.paperSubtitle || 'RESEARCH PAPER'}</span>
-                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                       </div>
-                     </div>
-                   ) : (
-                     <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-60 group-hover:opacity-100"
-                      referrerPolicy="no-referrer"
-                     />
-                   )}
-                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent pointer-events-none" />
-                   <div className="absolute bottom-4 left-4">
-                      <div className="flex gap-2">
-                        {project.tags.slice(0, 2).map(tag => (
-                          <span key={tag} className="px-2 py-0.5 rounded-full bg-zinc-950/80 backdrop-blur-md border border-zinc-700 text-[9px] font-mono text-zinc-300 uppercase tracking-wider">
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                   </div>
-                </div>
-
-                <div className="p-6 flex flex-col flex-grow">
-                  <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-xl font-bold group-hover:text-primary transition-colors leading-tight">{project.title}</h3>
-                    <div className="p-2 rounded-lg bg-zinc-800 text-primary group-hover:bg-primary group-hover:text-zinc-950 transition-colors">
-                      <project.icon size={18} />
+        {filter !== 'All' ? (
+          <motion.div 
+            layout
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            <AnimatePresence mode='popLayout'>
+              {filteredProjects.map((project, idx) => renderProjectCard(project, idx))}
+            </AnimatePresence>
+          </motion.div>
+        ) : (
+          <div className="space-y-16">
+            {types.map((type) => {
+              const projectsInType = t.projects.data.filter(p => p.type === type);
+              if (projectsInType.length === 0) return null;
+              return (
+                <div key={type} className="space-y-6">
+                  {/* Category Separator / Header */}
+                  <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-2 bg-zinc-950 px-4 py-1.5 rounded-xl border border-zinc-800 text-primary">
+                      {getCategoryIcon(type)}
+                      <span className="text-xs font-mono font-bold uppercase tracking-wider">{type}</span>
                     </div>
-                  </div>
-                  
-                  <p className="text-zinc-400 text-sm font-light mb-6 flex-grow leading-relaxed line-clamp-3">
-                    {project.description}
-                  </p>
-
-                  <div className="flex items-center justify-between pt-4 border-t border-zinc-800 mt-auto">
-                    <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest flex items-center gap-2 group-hover:text-white transition-colors">
-                      <Info size={12} className="text-zinc-300" />
-                      View Details
+                    <div className="h-[1px] flex-grow bg-gradient-to-r from-zinc-800 to-transparent" />
+                    <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">
+                      {projectsInType.length} {projectsInType.length === 1 ? (t.language === 'it' ? 'progetto' : 'project') : (t.language === 'it' ? 'progetti' : 'projects')}
                     </span>
-                    <ArrowRight size={16} className="text-zinc-600 group-hover:text-white transition-colors group-hover:translate-x-1" />
                   </div>
+
+                  {/* Sub-grid of cards */}
+                  <motion.div 
+                    layout
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                  >
+                    <AnimatePresence mode='popLayout'>
+                      {projectsInType.map((project, idx) => renderProjectCard(project, idx))}
+                    </AnimatePresence>
+                  </motion.div>
                 </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+              );
+            })}
+          </div>
+        )}
       </div>
 
       {/* Project Modal / Detailed Case Study */}
