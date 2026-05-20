@@ -7,7 +7,7 @@ import Blog from './components/Blog';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import { Language, translations } from './translations';
+import { Language, translations } from './i18n/translations';
 
 interface LanguageContextType {
   language: Language;
