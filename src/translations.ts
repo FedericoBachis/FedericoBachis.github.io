@@ -69,7 +69,7 @@ export const translations = {
       data: [
         {
           title: "Goodnight Potion",
-          description: "A 2D puzzle game where a wizard must finish all his potions before going to sleep. Features over 30 levels and an endless mode.",
+          description: "Embark on a magical journey in an immersive single-player puzzle game where the life of a powerful mage depends on nightly potions. Originally created during Mini Jam 103: Darkness and later expanded with additional content updates on itch.io. Game available for Web, Desktop and Android!",
           type: "Videogame",
           link: "https://creative-lizards.itch.io/goodnight-potion",
           demoLink: "https://creative-lizards.itch.io/goodnight-potion",
@@ -79,14 +79,14 @@ export const translations = {
           image: gnpImg,
           caseStudy: {
             challenge: "Creating a compelling puzzle mechanic that balances simplicity with deep strategy using limited resources.",
-            role: "Lead Developer & Game Designer",
+            role: "Lead Developer and Game Designer",
             solution: "Developed a tile-based movement system where potion consumption order matters, using Unity's 2D engine and custom pathfinding logic.",
-            result: "Successful launch on itch.io with positive community feedback on level design and difficulty curve."
+            result: "Released on itch.io for Web, Desktop and Android with multiple post-launch updates, achievements and leaderboard support."
           }
         },
         {
-          title: "Distordi",
-          description: "A 3D third-person multiplayer puzzle game. Players recover memories by exploring clues created by AI.",
+          title: "Distordi (aka Distorted Memories)",
+          description: "A 3D third-person multiplayer puzzle game. Originally developed for the Global Game Jam and sponsored by Photon. You all lived in the same neighborhood and that fast food joint was your hangout. You come back to the place after many years and find all your memories of the past... Memories and stories are AI-generated (images and text).",
           type: "Videogame",
           link: "https://federyuk91.itch.io/distordi",
           demoLink: "https://federyuk91.itch.io/distordi",
@@ -98,12 +98,12 @@ export const translations = {
             challenge: "Synchronizing complex puzzle states across multiple players in a 3D environment while integrating generative content.",
             role: "Full Stack Developer (Unity + Photon)",
             solution: "Implemented Photon Bolt for networking and custom API bridges to handle AI-generated clue injection during gameplay.",
-            result: "A unique multiplayer experience showcased at several indie dev meetups."
+            result: "Experimental multiplayer experience centered around AI-generated memories, collaborative exploration and narrative interaction."
           }
         },
         {
           title: "MyStupidBigFamily",
-          description: "A fun and chaotic game developed for Ludum Dare 38. Manage a large, growing family with unique needs and challenges.",
+          description: "Developed for the Global Game Jam 2021. You temporarily lost your memory after a car crash, nothing serious but you are hospitalized. Your family is full of funny and a bit stupid people that, instead of worrying about your condition, decide to fool you texting you under fake identities. You can use your virtual phone to chat with your family and friends or even play some music. Will you be able to find out who's lying and who's telling the truth? How many of the fourteen suspects will you place correctly? Put your investigation abilities to the test with this soft thriller without any crime involved!",
           type: "Videogame",
           link: "https://federyuk91.itch.io/mystupidbigfamily",
           demoLink: "https://federyuk91.itch.io/mystupidbigfamily",
@@ -120,24 +120,24 @@ export const translations = {
         },
         {
           title: "Tree of Heroes",
-          description: "A strategic game developed for Ludum Dare 36. Grow your tree of heroes and defend your realm against waves of enemies.",
+          description: "A game about lineages of hero families. The game is a metaphor for the life of heroes, where their life is seen as a series of challenges of charisma, strength, luck and bravery. Your role is to choose which challenges to face. At the end of the challenges, two heroes meet and give birth to new heroes who inherit some traits and start the next level.",
           type: "Videogame",
           link: "https://federyuk91.itch.io/heroess-tree",
           demoLink: "https://federyuk91.itch.io/heroess-tree",
           pubYear: "2020",
           icon: Gamepad2,
-          tags: ["Unity", "Strategy", "Defense"],
+          tags: ["Unity", "Strategy", "Lineage", "Roguelite"],
           image: htImg,
           caseStudy: {
-            challenge: "Balancing the growth mechanic of the tree with the difficulty of enemy waves.",
-            role: "Game Designer & Developer",
+            challenge: "Designing a lineage-based progression system where inherited traits meaningfully affect future generations.",
+            role: "Game Designer and Developer",
             solution: "Iterated through multiple balancing passes on the resource cost and combat mechanics during the jam.",
             result: "Ranked well in the Jam category for innovation and theme integration."
           }
         },
         {
           title: "Digital Twins for Cultural Heritage",
-          description: "Development of prototypes and editor tools for creating digital twins of museums for cultural preservation (Project IDEALIA).",
+          description: "Research and development of interactive digital twin systems for museums and cultural heritage environments within the IDEALIA project.",
           type: "Research",
           link: "https://www.crs4.it/it/projectdetails/IDEALIA/",
           pubYear: "2026",
@@ -146,14 +146,14 @@ export const translations = {
           image: idealiaImg,
           caseStudy: {
             challenge: "Accurately representing real-world museum environments while maintaining high performance for web and mobile VR browsers.",
-            role: "Research Technologist @ CRS4",
+            role: "Research Technologist at CRS4",
             solution: "Created custom shaders and LOD (Level of Detail) systems in Unity to handle high-fidelity photogrammetry models efficiently.",
-            result: "Used by research institutions to provide virtual tours during lockdown periods."
+            result: "Adopted as a foundation for interactive virtual museum experiences and digital heritage exploration."
           }
         },
         {
           title: "Conversational NPC Tourist Guide in VR",
-          description: "IEEE research publication on improving user engagement in fully immersive environments. Specifically evaluates historical data retention and spatial behavior when guided by an interactive AI conversational agent.",
+          description: "IEEE publication focused on conversational virtual agents in immersive VR environments for cultural heritage guidance, analyzing user engagement, spatial behavior and information retention.",
           type: "Publications",
           link: "https://ieeexplore.ieee.org/document/9604871",
           demoLink: "https://ieeexplore.ieee.org/document/9604871",
@@ -169,14 +169,14 @@ export const translations = {
           paperSubtitle: "CONVERSATIONAL AGENT",
           caseStudy: {
             challenge: "Evaluating spatial and conversational interaction parameters within full-presence headsets to establish meaningful cultural-tourist interaction metrics.",
-            role: "Co-Author & Lead XR Developer",
+            role: "Co-Author and Lead XR Developer",
             solution: "Engineered the direct speech interface, directional animation controllers, and state tree trackers coordinating the virtual NPC within a complete 3D VR heritage rendering.",
-            result: "Peer-reviewed publication indicating a significant improvement in temporal orientation and high subjective satisfaction markers across targeted focus groups."
+            result: "Peer-reviewed publication highlighting improved engagement, spatial orientation and information retention in immersive guided experiences."
           }
         },
         {
           title: "Rossana / Patented Robotic Assistant System",
-          description: "WIPO Patent Publication for an anthropomorphic robotic assistant designed to guide library visitors in full autonomous orchestration. Incorporates multi-sensory physical interaction with advanced game engine logic.",
+          description: "International WIPO patent describing an anthropomorphic robotic assistant system for autonomous visitor guidance in public spaces, integrating ROS, virtual avatars and interactive behaviors.",
           type: "Publications",
           link: "https://patentimages.storage.googleapis.com/f2/e7/e3/bcf1a713448e07/WO2023053048A1.pdf",
           demoLink: "https://patentimages.storage.googleapis.com/f2/e7/e3/bcf1a713448e07/WO2023053048A1.pdf",
@@ -192,9 +192,9 @@ export const translations = {
           paperSubtitle: "ROBOTIC SYSTEM PATENT",
           caseStudy: {
             challenge: "Bridging physical robotic navigation (ROS) and real-time human micro-interactions using highly expressive 3D physical avatars.",
-            role: "Co-Inventor & System Architect",
+            role: "Co-Inventor and System Architect",
             solution: "Designed and patented an interactive hardware-software orchestrator that binds high-level Unity behaviors, websocket events, ROS, and microcontrollers.",
-            result: "Granted PCT patent (WO2023053048A1), successfully deployed and tested in public libraries with high engagement rates."
+            result: "International patent publication validated through public-space testing scenarios involving autonomous visitor interaction workflows."
           }
         },
         {
@@ -217,12 +217,12 @@ export const translations = {
             challenge: "Simulating plausible, realistic human behavior under high stress and panic inside complex indoor layouts.",
             role: "Co-Author & ML Simulation Engineer",
             solution: "Trained multi-agent reinforcement learning behavior trees using Unity ML-Agents with perception cameras and social forces parameters.",
-            result: "A robust framework validating the feasibility of utilizing deep reinforcement learning to predict emergent bottleneck formations during emergency departures."
+            result: "Research framework demonstrating the viability of reinforcement learning for simulating crowd behavior during emergency evacuations."
           }
         },
         {
           title: "Sarim",
-          description: "Immersive VR experience for HTC Vive showcasing Sardinian cultural heritage using photogrammetry.",
+          description: "Immersive HTC Vive VR experience focused on the digitization and exploration of Sardinian cultural heritage through photogrammetry and real-time rendering.",
           type: "Research",
           link: "https://www.youtube.com/watch?v=lBzVPqVZsJg&list=PLYxmg_Vzg9K8eA1Gr4uv4nu6H0WeM9ZXi",
           videoUrl: "https://www.youtube.com/embed/lBzVPqVZsJg",
@@ -232,7 +232,7 @@ export const translations = {
           image: sarimImg,
           caseStudy: {
             challenge: "Capturing and digitizing large-scale archaeological sites with millimetric precision for an immersive VR setting.",
-            role: "VR Developer & Photographer",
+            role: "VR Developer and Photographer",
             solution: "Used 3DF Zephyr for photogrammetry and optimized the resulting multi-million polygon meshes for VR use in Unity.",
             result: "Exhibited at cultural fairs, bringing ancient history to life for non-expert audiences."
           }
@@ -250,12 +250,12 @@ export const translations = {
             challenge: "Distilling complex space mechanics into an accessible card-based strategy game.",
             role: "Game Designer & Illustrator",
             solution: "Focused on an 'emergent narrative' approach where card interactions tell a story of desperate survival.",
-            result: "Prototype testing showed high engagement and 'one-more-round' appeal."
+            result: "Prototype playtests highlighted strong replayability and consistent player engagement across multiple sessions."
           }
         },
         {
           title: "Pinguini alla Deriva",
-          description: "A fun and strategic web-based board game where players manage penguins on drifting ice floes. Developed by Federyuk91.",
+          description: "A turn-based browser board game where players manage penguin colonies across drifting icebergs, balancing movement, survival and territorial control.",
           type: "Boardgame",
           link: "https://pinguini-alla-deriva-446895826488.europe-west2.run.app/",
           pubYear: "2026",
@@ -266,7 +266,7 @@ export const translations = {
             challenge: "Creating a balanced turn-based strategy game that works seamlessly in the browser with real-time updates.",
             role: "Lead Developer",
             solution: "Developed a custom state management system to handle turns and ice movement logic efficiently.",
-            result: "A polished web experience with engaging gameplay mechanics."
+            result: "Playable browser prototype featuring strategic movement systems and dynamic environmental interactions."
           }
         },
         {
@@ -282,7 +282,7 @@ export const translations = {
             challenge: "Creating a high-pressure environment with procedural obstacle generation that fits a mobile-friendly 1-minute loop.",
             role: "Game Developer",
             solution: "Implemented a custom buoyancy and gravity system to simulate being inside a stomach, with object pooling for obstacles.",
-            result: "A challenging prototype used to test juice and feedback mechanics in Unity."
+            result: "Fast-paced gameplay prototype developed to explore responsive feedback systems and survival-oriented mechanics."
           }
         },
         {
@@ -296,9 +296,9 @@ export const translations = {
           image: tsImg,
           caseStudy: {
             challenge: "Managing thousands of unique vehicle instances and complex traffic light logic while maintaining high performance.",
-            role: "System Architect & Lead Developer",
+            role: "System Architect and Lead Developer",
             solution: "Implemented discrete event simulation for traffic lights and GPU instancing for vehicle rendering.",
-            result: "Successfully used as a base for urban planning visualization projects."
+            result: "Simulation prototype used as a technical foundation for urban traffic visualization and experimentation."
           }
         }
       ]
@@ -394,7 +394,7 @@ export const translations = {
       data: [
         {
           title: "Goodnight Potion",
-          description: "Un puzzle game 2D in cui un mago deve finire tutte le sue pozioni prima di andare a dormire. Include oltre 30 livelli e una modalità infinita.",
+          description: "🌙 Intraprendi un viaggio magico in un coinvolgente puzzle game single-player in cui la vita di un potente mago dipende dalle sue pozioni notturne. Creato originariamente durante la Mini Jam 103: Darkness e successivamente ampliato con aggiornamenti e nuovi contenuti su itch.io. Gioco disponibile per Web, Desktop e Android!",
           type: "Videogioco",
           link: "https://creative-lizards.itch.io/goodnight-potion",
           demoLink: "https://creative-lizards.itch.io/goodnight-potion",
@@ -404,14 +404,14 @@ export const translations = {
           image: gnpImg,
           caseStudy: {
             challenge: "Creare una meccanica di gioco avvincente che bilanci semplicità e strategia profonda con risorse limitate.",
-            role: "Lead Developer & Game Designer",
+            role: "Lead Developer and Game Designer",
             solution: "Sviluppato un sistema di movimento a griglia dove l'ordine di consumo delle pozioni è fondamentale, usando Unity 2D e logica di pathfinding personalizzata.",
-            result: "Lancio di successo su itch.io con feedback positivi sulla curva di difficoltà."
+            result: "Pubblicato su itch.io per Web, Desktop e Android con feedback positivi su struttura dei puzzle e progressione del gameplay."
           }
         },
         {
-          title: "Distordi",
-          description: "Un puzzle game multiplayer in terza persona 3D. I giocatori recuperano ricordi esplorando indizi creati dall'IA.",
+          title: "Distordi (aka Ricordi Distorti)",
+          description: "Un puzzle game multiplayer 3D in terza persona. Sviluppato per la Global Game Jam e sponsorizzato da Photon. Vivevate tutti nello stesso quartiere e quel fast food era il vostro ritrovo. Ritorni nel luogo dopo molti anni e ritrovi tutti i tuoi ricordi del passato... I ricordi e le storie sono generati da IA (immagini e testi).",
           type: "Videogioco",
           link: "https://federyuk91.itch.io/distordi",
           demoLink: "https://federyuk91.itch.io/distordi",
@@ -423,12 +423,12 @@ export const translations = {
             challenge: "Sincronizzare stati di puzzle complessi tra più giocatori in ambiente 3D integrando contenuti generativi.",
             role: "Full Stack Developer (Unity + Photon)",
             solution: "Implementato Photon Bolt per il networking e bridge API personalizzati per l'iniezione degli indizi generati dall'IA.",
-            result: "Un'esperienza multiplayer unica presentata in diversi meetup indie."
+            result: "Esperienza multiplayer sperimentale basata su ricordi generati da IA, esplorazione collaborativa e interazione narrativa."
           }
         },
         {
           title: "MyStupidBigFamily",
-          description: "Un gioco divertente e caotico sviluppato per la Ludum Dare 38. Gestisci una famiglia numerosa in crescita con bisogni unici.",
+          description: "Sviluppato per la Global Game Jam 2021. Hai temporaneamente perso la memoria dopo un incidente stradale, nulla di grave ma sei ricoverato. La tua famiglia è piena di persone divertenti e un po' stupide che, invece di preoccuparsi del tuo stato, decidono di farti fesso inviandoti messaggi sotto false identità. Puoi usare il tuo smartphone virtuale per chattare con famiglia e amici o persino riprodurre musica. Riuscirai a scoprire chi mente e chi dice la verità? Quanti dei quattordici sospetti saprai collocare correttamente? Metti alla prova le tue abilità investigative con questo thriller soft senza crimini!",
           type: "Videogioco",
           link: "https://federyuk91.itch.io/mystupidbigfamily",
           demoLink: "https://federyuk91.itch.io/mystupidbigfamily",
@@ -445,24 +445,24 @@ export const translations = {
         },
         {
           title: "Tree of Heroes",
-          description: "Un gioco strategico sviluppato per la Ludum Dare 36. Fai crescere il tuo albero di eroi e difendi il regno.",
+          description: "Un gioco focalizzato sulle linee di discendenza di famiglie di eroi. Il gioco è una metafora della vita degli eroi, vista come una serie di sfide di carisma, forza, fortuna e coraggio. Il tuo ruolo è scegliere quali sfide affrontare. Al termine delle sfide, due eroi si incontrano e danno vita a nuovi eroi che erediteranno alcuni tratti di partenza ed inizieranno il livello successivo.",
           type: "Videogioco",
           link: "https://federyuk91.itch.io/heroess-tree",
           demoLink: "https://federyuk91.itch.io/heroess-tree",
           pubYear: "2020",
           icon: Gamepad2,
-          tags: ["Unity", "Strategia", "Difesa"],
+          tags: ["Unity", "Strategia", "Lineage", "Roguelite"],
           image: htImg,
           caseStudy: {
-            challenge: "Bilanciare la meccanica di crescita dell'albero con la difficoltà delle ondate nemiche.",
-            role: "Game Designer & Developer",
+            challenge: "Progettare un sistema di progressione dinastica in cui i tratti ereditari influenzano concretamente le generazioni future.",
+            role: "Game Designer and Developer",
             solution: "Effettuati molteplici passaggi di bilanciamento sui costi delle risorse e meccaniche di combattimento durante la jam.",
             result: "Ottimo posizionamento nella categoria Jam per innovazione e integrazione del tema."
           }
         },
         {
           title: "Digital Twins per i Beni Culturali",
-          description: "Sviluppo di prototipi e strumenti editor per la creazione di gemelli digitali di musei (Progetto IDEALIA).",
+          description: "Ricerca e sviluppo di sistemi di digital twin interattivi per musei e ambienti culturali nell'ambito del progetto IDEALIA.",
           type: "Ricerca",
           link: "https://www.crs4.it/it/projectdetails/IDEALIA/",
           pubYear: "2026",
@@ -473,12 +473,12 @@ export const translations = {
             challenge: "Rappresentare accuratamente ambienti museali reali mantenendo alte prestazioni su browser web e VR mobile.",
             role: "Tecnologo della ricerca @ CRS4",
             solution: "Creati shader personalizzati e sistemi LOD (Level of Detail) in Unity per gestire modelli fotogrammetrici ad alta fedeltà.",
-            result: "Utilizzato da istituzioni di ricerca per tour virtuali durante i periodi di lockdown."
+            result: "Utilizzato come base per esperienze museali virtuali e sistemi di esplorazione del patrimonio culturale."
           }
         },
         {
           title: "Conversational NPC Tourist Guide in VR",
-          description: "Pubblicazione scientifica (IEEE) sull'aumento dell'engagement dell'utente in ambienti virtuali immersivi, studiando i livelli di memorizzazione dei percorsi storici con un NPC conversazionale dotato di intelligenza artificiale.",
+          description: "Pubblicazione IEEE focalizzata su agenti conversazionali virtuali in ambienti VR immersivi per la guida culturale, con analisi di engagement, comportamento spaziale e memorizzazione delle informazioni.",
           type: "Pubblicazioni",
           link: "https://ieeexplore.ieee.org/document/9604871",
           demoLink: "https://ieeexplore.ieee.org/document/9604871",
@@ -496,12 +496,12 @@ export const translations = {
             challenge: "Valutare l'usabilità complessiva e l'impatto cognitivo di un agente vocale che guida passeggeri e turisti all'interno di ambienti immersivi ad alta interattività.",
             role: "Co-Autore & Sviluppatore Lead XR",
             solution: "Sviluppato il sistema di audio spaziale, le routine di tracciamento e le macchine a stati decisionali del prototipo VR interamente integrato in Unity.",
-            result: "La pubblicazione scientifica ha dimostrato un incremento sostanziale della rievocazione cognitiva dei beni esposti e del tasso di gradimento generale."
+            result: "La pubblicazione evidenzia un miglioramento dell'engagement, dell'orientamento spaziale e della memorizzazione delle informazioni in VR."
           }
         },
         {
           title: "Rossana / Sistema Robotico di Assistenza Brevettato",
-          description: "Brevetto internazionale WIPO per un assistente robotico antropomorfo sviluppato per guidare autonomamente i visitatori in biblioteca, coordinando espressioni virtuali e movimento ROS.",
+          description: "Brevetto internazionale WIPO relativo a un sistema robotico antropomorfo per la guida autonoma dei visitatori in spazi pubblici, integrando ROS, avatar virtuali e comportamenti interattivi.",
           type: "Pubblicazioni",
           link: "https://patentimages.storage.googleapis.com/f2/e7/e3/bcf1a713448e07/WO2023053048A1.pdf",
           demoLink: "https://patentimages.storage.googleapis.com/f2/e7/e3/bcf1a713448e07/WO2023053048A1.pdf",
@@ -519,7 +519,7 @@ export const translations = {
             challenge: "Far comunicare in tempo reale motori fisici, sensoristica (ROS) ed espressioni mimiche tramite un avatar virtuale interattivo ad alta fedeltà.",
             role: "Co-Inventore & Architetto di Sistema",
             solution: "Progettazione e brevettazione di un orchestratore hardware-software che integra Unity via websocket con moduli ROS, sensori rotativi ed Arduino.",
-            result: "Brevetto internazionale depositato (WO2023053048A1), convalidato tramite test sul campo in ambiente pubblico bibliotecario su oltre 500 visitatori."
+            result: "Pubblicazione brevettuale internazionale validata tramite scenari di test pubblici dedicati all'interazione autonoma con i visitatori."
           }
         },
         {
@@ -542,12 +542,12 @@ export const translations = {
             challenge: "Simulare dinamiche credibili di panico e movimento umano in situazioni ad alto stress all'interno di planimetrie complesse.",
             role: "Co-Autore & Ingegnere di Simulazione ML",
             solution: "Addestramento di agenti tramite Deep Reinforcement Learning (ML-Agents) provvisti di sensori visivi e parametri di forza sociale.",
-            result: "La pubblicazione scientifica ha validato l'usabilità di modelli ad agenti auto-appresi per prevedere colli di bottiglia ed anomalie durante le emergenze."
+            result: "Framework di ricerca che dimostra la validità del reinforcement learning per la simulazione del comportamento collettivo durante evacuazioni."
           }
         },
         {
           title: "Sarim",
-          description: "Esperienza VR immersiva per HTC Vive che mostra il patrimonio culturale sardo usando la fotogrammetria.",
+          description: "Esperienza VR immersiva per HTC Vive dedicata alla digitalizzazione e all'esplorazione del patrimonio culturale sardo tramite fotogrammetria e rendering realtime.",
           type: "Ricerca",
           link: "https://www.youtube.com/watch?v=lBzVPqVZsJg&list=PLYxmg_Vzg9K8eA1Gr4uv4nu6H0WeM9ZXi",
           videoUrl: "https://www.youtube.com/embed/lBzVPqVZsJg",
@@ -557,7 +557,7 @@ export const translations = {
           image: sarimImg,
           caseStudy: {
             challenge: "Catturare e digitalizzare siti archeologici su larga scala con precisione millimetrica per un ambiente VR immersivo.",
-            role: "Sviluppatore VR & Fotografo",
+            role: "Sviluppatore VR e Fotografo",
             solution: "Usato 3DF Zephyr per la fotogrammetria e ottimizzate le mesh risultanti da milioni di poligoni per l'uso VR in Unity.",
             result: "Esposto a fiere culturali, portando la storia antica al grande pubblico."
           }
@@ -573,14 +573,14 @@ export const translations = {
           image: oohImg,
           caseStudy: {
             challenge: "Distillare meccaniche spaziali complesse in un gioco di strategia di carte accessibile.",
-            role: "Game Designer & Illustratore",
+            role: "Game Designer e Illustratore",
             solution: "Focus su un approccio di 'narrativa emergente' in cui le interazioni delle carte raccontano una storia di sopravvivenza.",
-            result: "I test sui prototipi hanno mostrato un alto coinvolgimento e voglia di rifare un'altra partita."
+            result: "I playtest del prototipo hanno evidenziato buona rigiocabilità e coinvolgimento costante dei partecipanti."
           }
         },
         {
           title: "Pinguini alla Deriva",
-          description: "Un gioco da tavolo web divertente e strategico in cui i giocatori gestiscono pinguini su lastre di ghiaccio alla deriva. Sviluppato da Federyuk91.",
+          description: "Un board game browser-based a turni in cui i giocatori gestiscono colonie di pinguini su iceberg alla deriva, bilanciando movimento, sopravvivenza e controllo territoriale.",
           type: "Boardgame",
           link: "https://pinguini-alla-deriva-446895826488.europe-west2.run.app/",
           pubYear: "2026",
@@ -591,7 +591,7 @@ export const translations = {
             challenge: "Creare un gioco di strategia a turni bilanciato che funzioni senza problemi nel browser con aggiornamenti in tempo reale.",
             role: "Lead Developer",
             solution: "Sviluppato un sistema di gestione dello stato personalizzato per gestire turni e logica di movimento del ghiaccio.",
-            result: "Un'esperienza web rifinita con meccaniche di gioco coinvolgenti."
+            result: "Prototipo browser-based giocabile con sistemi strategici di movimento e interazioni ambientali dinamiche."
           }
         },
         {
@@ -607,7 +607,7 @@ export const translations = {
             challenge: "Creare un ambiente ad alta pressione con generazione procedurale di ostacoli che si adatti a un loop di 1 minuto.",
             role: "Sviluppatore di gioco",
             solution: "Implementato un sistema di galleggiamento e gravità personalizzato per simulare l'interno di uno stomaco, con object pooling.",
-            result: "Un prototipo stimolante usato per testare il feedback tattile e visivo in Unity."
+            result: "Prototipo action ad alta intensità sviluppato per sperimentare sistemi di feedback e meccaniche survival."
           }
         },
         {
@@ -621,9 +621,9 @@ export const translations = {
           image: tsImg,
           caseStudy: {
             challenge: "Gestire migliaia di istanze di veicoli unici e logica semaforica complessa mantenendo prestazioni elevate.",
-            role: "Architetto di sistema & Lead Developer",
+            role: "Architetto di sistema e Lead Developer",
             solution: "Implementata simulazione ad eventi discreti per i semafori e GPU instancing per il rendering dei veicoli.",
-            result: "Utilizzato come base per progetti di visualizzazione della pianificazione urbana."
+            result: "Prototipo di simulazione utilizzato come base tecnica per visualizzazioni e sperimentazioni sul traffico urbano."
           }
         }
       ]
