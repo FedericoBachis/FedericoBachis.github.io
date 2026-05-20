@@ -161,6 +161,22 @@ export const translations = {
           }
         },
         {
+          title: "Paper",
+          description: "todo",
+          type: "Research",
+          link: "https://www.youtube.com/watch?v=lBzVPqVZsJg&list=PLYxmg_Vzg9K8eA1Gr4uv4nu6H0WeM9ZXi",
+          videoUrl: "https://www.youtube.com/embed/lBzVPqVZsJg",
+          icon: Box,
+          tags: ["VR", "Photogrammetry", "History"],
+          image: sarimImg,
+          caseStudy: {
+            challenge: ".....",
+            role: "VR Developer & Photographer",
+            solution: "Used 3DF Zephyr for photogrammetry and optimized the resulting multi-million polygon meshes for VR use in Unity.",
+            result: "Exhibited at cultural fairs, bringing ancient history to life for non-expert audiences."
+          }
+        },
+        {
           title: "Sarim",
           description: "Immersive VR experience for HTC Vive showcasing Sardinian cultural heritage using photogrammetry.",
           type: "Research",
