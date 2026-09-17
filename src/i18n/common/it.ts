@@ -22,7 +22,7 @@ export const commonTextIt = {
     days: "Giorni",
     hours: "Ore",
     bio1: "Indie **Game Developer** e **Unity Developer** dal 2017.",
-    bio2: "Mi occupo di **sviluppo di ambienti 3D**, interazione uomo-robot e **gamification** per applicazioni di ricerca. Attualmente lavoro come **Tecnologo della Ricerca** in Sistemi di Interazione basati sui giochi presso il **CRS4**, unendo ricerca avanzata e **user experience immersive**.",
+    bio2: "Mi occupo di **sviluppo di ambienti 3D**, interazione uomo-robot e **gamification** per applicazioni di ricerca. Attualmente lavoro come **Tecnologo della Ricerca** in Game-Based Interaction technologies presso il **CRS4**, unendo ricerca avanzata e **user experience immersive**.",
     bio3: "Sono laureato in **Informatica** presso l'Università di Cagliari, con competenze in **scrittura scientifica** e **architettura software tecnica**.",
     uplink: "Link Aziendale",
     view_page: "Vedi Pagina"
