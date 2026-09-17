@@ -55,10 +55,10 @@ export const commonTextEn = {
   contact: {
     title: "Transmission",
     subtitle: "Contact",
-    header_line1: "Let's Build",
-    header_line2: "Something",
-    header_line3: "Immersive",
-    description: "Whether you have a specific project in mind or just want to discuss the future of game-based interaction systems, my door is always open.",
+    header_line1: "Innovating", 
+    header_line2: "through",
+    header_line3: "Play",
+    description: "For me, game design is primarily about creating systems that generate interesting player dynamics, using rules and mechanics to shape behaviors, choices, and interactions.",
     button: "SAY HELLO",
     response_time: "Response time: ~24-48 hours"
   },
