@@ -55,15 +55,15 @@ export const commonTextIt = {
   contact: {
     title: "Trasmissione",
     subtitle: "Contatti",
-    header_line1: "Costruiamo",
-    header_line2: "Qualcosa di",
-    header_line3: "Immersivo",
-    description: "Che tu abbia un progetto specifico in mente o voglia solo discutere il futuro dei sistemi di interazione basati sul gioco, la mia porta è sempre aperta.",
+    header_line1: "Innovare",
+    header_line2: "con il",
+    header_line3: "Gioco",
+    description: "Il game design per me è soprattutto progettare sistemi capaci di generare dinamiche interessanti tra i giocatori, usando regole e meccaniche per orientarne comportamenti, scelte e interazioni.",
     button: "Contattami",
     response_time: "Tempo di risposta: ~24-48 ore"
   },
   footer: {
-    rights: "Tutti i diritti rovesciati",
+    rights: "C:",
     location: "Sardegna, IT"
   }
 };
