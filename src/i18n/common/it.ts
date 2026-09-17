@@ -7,7 +7,7 @@ export const commonTextIt = {
   },
   hero: {
     greeting: "Ciao, sono",
-    description: "Sviluppatore Unity & Tecnologo di ricerca"
+    description: "Game Designer, Unity Developer e Ricercatore"
   },
   about: {
     title: "Coding since 2017",
