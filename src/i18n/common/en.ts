@@ -7,7 +7,7 @@ export const commonTextEn = {
   },
   hero: {
     greeting: "Hello, I'm",
-    description: "Unity Game Developer & Research Technologist"
+    description: "Game Designer, Unity Developer & Research Technologist"
   },
   about: {
     title: "Coding since 2017",
