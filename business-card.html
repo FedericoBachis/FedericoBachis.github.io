@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Federico Bachis - Business Card</title>
+    <style>
+      :root {
+        --bg: #09090b;
+        --panel: #111113;
+        --line: #2a2a30;
+        --muted: #9ca3af;
+        --text: #f4f4f5;
+        --primary: #14b8a6;
+        --primary-dark: #0f766e;
+        --paper: #18181b;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        gap: 28px;
+        padding: 40px;
+        background: #0c0c0f;
+        color: var(--text);
+        font-family: Inter, Segoe UI, Arial, sans-serif;
+      }
+
+      .sheet {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(320px, 1fr));
+        gap: 28px;
+        width: min(100%, 1100px);
+      }
+
+      .card-wrap {
+        display: grid;
+        gap: 12px;
+      }
+
+      .label {
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .card {
+        position: relative;
+        aspect-ratio: 85 / 55;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: var(--bg);
+        box-shadow: 0 22px 80px rgba(0, 0, 0, 0.45);
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(90deg, rgba(20, 184, 166, 0.1) 1px, transparent 1px),
+          linear-gradient(rgba(20, 184, 166, 0.08) 1px, transparent 1px);
+        background-size: 24px 24px;
+        opacity: 0.32;
+      }
+
+      .card::after {
+        content: "";
+        position: absolute;
+        width: 220px;
+        height: 220px;
+        right: -70px;
+        top: -70px;
+        border-radius: 999px;
+        background: radial-gradient(circle, rgba(20, 184, 166, 0.34), rgba(20, 184, 166, 0) 68%);
+      }
+
+      .face-back {
+        background: #71717a;
+        border-color: #52525b;
+        color: #f4f4f5;
+      }
+
+      .face-back::before {
+        background:
+          linear-gradient(90deg, rgba(244, 244, 245, 0.08) 1px, transparent 1px),
+          linear-gradient(rgba(244, 244, 245, 0.07) 1px, transparent 1px);
+        background-size: 24px 24px;
+        opacity: 0.48;
+      }
+
+      .face-back::after {
+        background: radial-gradient(circle, rgba(20, 184, 166, 0.24), rgba(20, 184, 166, 0) 68%);
+      }
+
+      .content {
+        position: relative;
+        z-index: 1;
+        height: 100%;
+        padding: 28px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .mark {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--primary);
+        font-family: "JetBrains Mono", Consolas, monospace;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .terminal {
+        width: 27px;
+        height: 20px;
+        border: 1.5px solid var(--primary);
+        border-radius: 5px;
+        position: relative;
+      }
+
+      .terminal::before {
+        content: ">";
+        position: absolute;
+        left: 5px;
+        top: 1px;
+        color: var(--primary);
+        font-size: 12px;
+      }
+
+      .terminal::after {
+        content: "";
+        position: absolute;
+        width: 6px;
+        height: 1.5px;
+        left: 15px;
+        top: 10px;
+        background: var(--primary);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(30px, 5vw, 54px);
+        line-height: 0.9;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+      }
+
+      h1 span {
+        display: block;
+        color: var(--primary);
+      }
+
+      .role {
+        width: min(100%, 390px);
+        margin: 0;
+        color: #d4d4d8;
+        font-size: 15px;
+        line-height: 1.35;
+      }
+
+      .bottom-row {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 18px;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+      }
+
+      .tag {
+        border: 1px solid rgba(20, 184, 166, 0.35);
+        border-radius: 999px;
+        color: #ccfbf1;
+        background: rgba(20, 184, 166, 0.08);
+        padding: 5px 9px;
+        font-family: "JetBrains Mono", Consolas, monospace;
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .face-back .content {
+        display: grid;
+        grid-template-columns: 1fr 118px;
+        grid-template-rows: auto 1fr auto;
+        gap: 18px 28px;
+      }
+
+      .face-back .mark {
+        color: var(--primary-dark);
+      }
+
+      .face-back .terminal {
+        border-color: var(--primary-dark);
+      }
+
+      .face-back .terminal::before {
+        color: var(--primary-dark);
+      }
+
+      .face-back .terminal::after {
+        background: var(--primary-dark);
+      }
+
+      .contact-list {
+        align-self: center;
+        grid-column: 1;
+        grid-row: 2;
+        display: grid;
+        gap: 11px;
+      }
+
+      .contact-item {
+        display: grid;
+        grid-template-columns: 62px 1fr;
+        gap: 14px;
+        align-items: baseline;
+        font-size: 13px;
+      }
+
+      .contact-item strong {
+        color: #ccfbf1;
+        font-family: "JetBrains Mono", Consolas, monospace;
+        font-size: 9px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .contact-item span {
+        color: #f4f4f5;
+      }
+
+      .qr {
+        grid-row: 1 / 4;
+        grid-column: 2;
+        align-self: center;
+        width: 118px;
+        height: 118px;
+        padding: 9px;
+        border: 1px solid rgba(20, 184, 166, 0.42);
+        border-radius: 10px;
+        background: #f4f4f5;
+      }
+
+      .qr img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: contain;
+      }
+
+      .qr-caption {
+        grid-column: 1;
+        color: #e4e4e7;
+        font-family: "JetBrains Mono", Consolas, monospace;
+        font-size: 9px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .statement {
+        grid-column: 1;
+        grid-row: 3;
+        max-width: 330px;
+        margin: 0;
+        color: #f4f4f5;
+        font-size: 17px;
+        line-height: 1.35;
+      }
+
+      .statement b {
+        color: #ccfbf1;
+      }
+
+      .print-note {
+        width: min(100%, 1100px);
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      @media (max-width: 840px) {
+        .sheet {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media print {
+        @page {
+          size: 85mm 55mm;
+          margin: 0;
+        }
+
+        body {
+          display: block;
+          padding: 0;
+          background: white;
+        }
+
+        .sheet {
+          display: block;
+          width: auto;
+        }
+
+        .card-wrap {
+          page-break-after: always;
+          margin: 0;
+        }
+
+        .label,
+        .print-note {
+          display: none;
+        }
+
+        .card {
+          width: 85mm;
+          height: 55mm;
+          border-radius: 0;
+          box-shadow: none;
+        }
+
+        .content {
+          padding: 5.5mm;
+        }
+
+        .face-back .content {
+          grid-template-columns: 1fr 22mm;
+          grid-template-rows: auto auto auto;
+          align-content: start;
+          gap: 3mm 5mm;
+        }
+
+        .contact-list {
+          gap: 1.8mm;
+        }
+
+        .contact-item {
+          grid-template-columns: 18mm 1fr;
+          gap: 3mm;
+          font-size: 7.5pt;
+        }
+
+        .contact-item strong,
+        .qr-caption {
+          font-size: 5.8pt;
+        }
+
+        .qr {
+          grid-row: 2 / 4;
+          width: 22mm;
+          height: 22mm;
+          padding: 1.2mm;
+        }
+
+        .qr-caption {
+          display: none;
+        }
+
+        .statement {
+          max-width: 48mm;
+          font-size: 7.7pt;
+          line-height: 1.22;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="sheet">
+      <section class="card-wrap">
+        <div class="label">Fronte</div>
+        <article class="card face-front" aria-label="Biglietto da visita fronte">
+          <div class="content">
+            <div class="mark">
+              <span class="terminal" aria-hidden="true"></span>
+              <span>Unity / XR / Research</span>
+            </div>
+
+            <div>
+              <h1>Federico <span>Bachis</span></h1>
+              <p class="role">Unity Game Developer & Research Technologist</p>
+            </div>
+
+            <div class="bottom-row">
+              <div class="tags">
+                <span class="tag">Unity</span>
+                <span class="tag">XR</span>
+                <span class="tag">Digital Twins</span>
+                <span class="tag">HRI</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="card-wrap">
+        <div class="label">Retro</div>
+        <article class="card face-back" aria-label="Biglietto da visita retro">
+          <div class="content">
+            <div class="mark">
+              <span class="terminal" aria-hidden="true"></span>
+              <span>FB_Dev</span>
+            </div>
+
+            <div class="contact-list">
+              <div class="contact-item">
+                <strong>Email</strong>
+                <span>f.bachisid91@gmail.com</span>
+              </div>
+              <div class="contact-item">
+                <strong>Web</strong>
+                <span>federicobachis.github.io</span>
+              </div>
+              <div class="contact-item">
+                <strong>LinkedIn</strong>
+                <span>linkedin.com/in/federico-bachis-85a59589</span>
+              </div>
+              <div class="contact-item">
+                <strong>Itch</strong>
+                <span>federyuk91.itch.io</span>
+              </div>
+            </div>
+
+            <p class="statement">Games, simulations and <b>research-driven interactive systems</b>.</p>
+
+            <div class="qr">
+              <img src="./portfolio-qr.svg" alt="QR code per federicobachis.github.io" />
+            </div>
+
+            <div class="qr-caption">Scan portfolio</div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <p class="print-note">
+      Formato europeo 85 x 55 mm. Per stampare: apri questo file nel browser, stampa in PDF e imposta scala 100%.
+      Il QR punta a https://federicobachis.github.io/.
+    </p>
+  </body>
+</html>

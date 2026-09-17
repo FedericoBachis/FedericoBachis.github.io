@@ -6,8 +6,8 @@ export const commonTextIt = {
     contact: "Contatti"
   },
   hero: {
-    greeting: "Ciao, sono",
-    description: "Game Designer, Unity Developer e Ricercatore"
+    greeting: "Hello world_",
+    description: "Game Designer · Unity Developer ·  Research Technologist"
   },
   about: {
     title: "Coding since 2017",
@@ -22,8 +22,8 @@ export const commonTextIt = {
     days: "Giorni",
     hours: "Ore",
     bio1: "Indie **Game Developer** e **Unity Developer** dal 2017.",
-    bio2: "Mi occupo di **sviluppo di ambienti 3D**, interazione uomo-robot e **gamification** per applicazioni di ricerca. Attualmente lavoro come **Tecnologo di Ricerca** in Game-Based Interaction technologies presso il **CRS4**, unendo ricerca avanzata e **user experience videoludica**.",
-    bio3: "Sono laureato in **Informatica** presso l'Università di Cagliari, con competenze in **scrittura scientifica** e **architettura software tecnica**.",
+      bio2: "Spazio tra giochi analogici e digitali, sono particolarmente interessato alle dinamiche di gioco e all'uso dei giochi come esperienza sociale. Attualmente mi occupo di **sviluppo di ambienti 3D** e **gamification** unendo ricerca e **gaming** presso il **CRS4**.",
+    bio3: "Laureato in **Informatica** presso l'Università di Cagliari, con competenze in **scrittura scientifica** e **architettura software tecnica**.",
     uplink: "Link Aziendale",
     view_page: "Vedi Pagina"
   },

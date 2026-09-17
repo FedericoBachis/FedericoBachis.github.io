@@ -6,8 +6,8 @@ export const commonTextEn = {
     contact: "Contact"
   },
   hero: {
-    greeting: "Hello, I'm",
-    description: "Game Designer, Unity Developer & Research Technologist"
+    greeting: "Hello World_",
+      description: "Game Designer · Research Technologist · Unity Developer"
   },
   about: {
     title: "Coding since 2017",
@@ -22,7 +22,7 @@ export const commonTextEn = {
     days: "Days",
     hours: "Hours",
     bio1: "Indie **Game Developer** and **Unity Developer** since 2017. My work spans digital and tabletop games, with a particular interest in player dynamics, prototyping, interactive systems and the use of games as shared social experiences.",
-    bio2: "I specialize in **3D environment development**, human-robot interaction, and **gamification** for research applications. Currently, I work as a **Research Technologist** in Game-Based Interaction Technologies at **CRS4**, bridging the gap between advanced research and **immersive user experiences**.",
+      bio2: "My work spans both analog and digital games, I am particularly interested in game dynamics and the use of games as a social experience. I currently focus on **3D environment development** and **gamification** combining research with **gaming** at **CRS4**.",
     bio3: "I hold a degree in **Computer Science** from the University of Cagliari, with expertise in **scientific writing** and **technical software architecture**.",
     uplink: "Company Uplink",
     view_page: "View Page"
