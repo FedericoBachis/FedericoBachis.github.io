@@ -21,7 +21,7 @@ export const commonTextEn = {
     months: "Months",
     days: "Days",
     hours: "Hours",
-    bio1: "Indie **Game Developer** and **Unity Developer** since 2017. My work spans digital and tabletop games, with a particular interest in player dynamics, prototyping, interactive systems and the use of games as shared social experiences.",
+    bio1: "Indie **Game Developer** and **Unity Developer** since 2017.",
       bio2: "My work spans both analog and digital games, I am particularly interested in game dynamics and the use of games as a social experience. I currently focus on **3D environment development** and **gamification** combining research with **gaming** at **CRS4**.",
     bio3: "I hold a degree in **Computer Science** from the University of Cagliari, with expertise in **scientific writing** and **technical software architecture**.",
     uplink: "Company Uplink",
