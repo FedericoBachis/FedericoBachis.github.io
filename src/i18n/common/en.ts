@@ -58,12 +58,12 @@ export const commonTextEn = {
     header_line1: "Innovating", 
     header_line2: "through",
     header_line3: "Play",
-    description: "For me, game design is primarily about creating systems that generate interesting player dynamics, using rules and mechanics to shape behaviors, choices, and interactions.",
+    description: "Game design is primarily about creating systems that generate interesting player dynamics, using rules and mechanics to shape behaviors, choices, and interactions.",
     button: "SAY HELLO",
     response_time: "Response time: ~24-48 hours"
   },
   footer: {
-    rights: "All Right Reversed",
+    rights: "C:",
     location: "Sardinia, IT"
   }
 };

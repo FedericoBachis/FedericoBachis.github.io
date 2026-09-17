@@ -58,7 +58,7 @@ export const commonTextIt = {
     header_line1: "Innovare",
     header_line2: "con il",
     header_line3: "Gioco",
-    description: "Il game design per me è soprattutto progettare sistemi capaci di generare dinamiche interessanti tra i giocatori, usando regole e meccaniche per orientarne comportamenti, scelte e interazioni.",
+    description: "Game design significa progettare sistemi capaci di generare dinamiche emergenti tra i giocatori, regole e meccaniche orientano comportamenti, scelte e interazioni.",
     button: "Contattami",
     response_time: "Tempo di risposta: ~24-48 ore"
   },
